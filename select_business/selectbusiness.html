@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        .center{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        h2{
+            font-family: 'San Marino Beach';
+            text-align: center;
+            font-size: 3em;
+            margin-top: 100px;
+        }
+        p{
+            border-bottom: groove;
+            border-width: 10px;
+        }
+        div{
+            background-color: #FFCD33;
+            padding: 4em;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            border-radius: 160px;
+            width: 70em;
+            height: 15em;
+            margin: auto;
+        }
+        img.icon{
+            height: 14em;
+            width: 14em;
+            border-radius: 40px;
+            transition-duration: 400ms;
+            margin: 4em;
+            transition-property: outline-width, transform;
+        }
+        img.icon:hover{
+            outline-style: groove;
+            outline-color: red;
+            transform: rotate(360deg);
+            outline-width: 10px;
+            box-shadow: 15px 2px 7px black;
+        }
+    </style>
+
+    <title>makeMenu</title>
+</head>
+<body>
+    <a href="../index.html"><img src="../logo.svg" alt="logo" class="center"></a>
+    <p></p>
+    <h2>SELECT YOUR BUSINESS</h2>
+    <div>
+        <img src="pizza.svg" alt="pizza" class="icon">
+        <img src="restaurant.svg" alt="restaurant" class="icon">
+        <img src="bar.svg" alt="bar" class="icon">
+    </div>
+</body>
+</html>
