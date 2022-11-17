@@ -1,0 +1,25 @@
+/* generic font */
+*{
+    font-family: "Century Gothic";
+}
+
+/* SVG Logo */
+img{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+/* Presentation */
+div.screen{
+    border-radius: 30px;
+    background-image:  linear-gradient(90deg, #20abab, rgba(12, 66, 201, 0.5));
+    /*background-image:  linear-gradient(90deg, #c25fb6, rgba(106, 1, 117, 0.77));*/
+}
+
+p.description {
+    font-size: 2em;
+    text-align: center;
+    padding-bottom: 1em;
+    font-weight: bold;
+}
