@@ -60,6 +60,7 @@ input[type="email"], input[type="password"], input[type="text"]{
     padding: 15px;
     box-sizing: border-box;
     font-size: 15px;
+    font-weight: bold;
 }
 input[type="submit"], input[type="reset"]{
     background-color: #c00000;
@@ -82,6 +83,7 @@ input[type="email"]:valid{ color: rgb(4, 193, 4); }
 /* message style */
 #message{
     color: white;
+    text-align: center;
 }
 a:link, a:visited, a:active{
     color: #c00000;

@@ -4,14 +4,12 @@
     font-size: 0.93em;
 }
 
-
+/* Wallpaper */
 body{
     background-image: linear-gradient(216.7deg, #ebe5e5 60%, #ffc000 60%);
     background-repeat: no-repeat;
     background-attachment: fixed;
-
 }
-
 
 /* SVG Logo */
 img.logo {
@@ -21,25 +19,63 @@ img.logo {
     display: block;
 }
 
+/* Log/Reg Button Style */
+div.buttons{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    align-items: center;
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 6em;
+}
+.button{
+    background-color: #c00000;
+    font-size: 2em;
+    font-weight: bold;
+    color: white;
+    padding: 0.5em 2em 0.5em 2em;
+    border-radius: 30px;
+    border-style: none;
+}
+.button:hover{
+    color: #c00000;
+    box-shadow:0px 0px 20px #c00000;
+    font-weight: bold;
+    border-color: #c00000;
+    background-color: #ffc000;
+    transform: translateY(-10%);
+    transition-duration: 200ms;
+}
+/* Animation of Presentation */
 @keyframes rotation {
     from{ transform: rotate(10deg);}
     to{ transform: rotate(-10deg); }
 }
-
-img.imageIcon{
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 2.7em;
-    display: flex;
-    width: 13em;
-    height: 13em;
-    animation-duration: 5s;
-    animation-name: rotation;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    animation-direction: alternate-reverse;
+@keyframes colori{
+    0%{background-position: 0 50%;}
+    50%{background-position: 100% 50%;}
+    100%{background-position: 0 50%;}
 }
 
+@keyframes animazione1{
+    0%{opacity: 0;}
+    20%{opacity: 1;}
+    30%{opacity: 0;}
+}
+@keyframes animazione2{
+    30%{opacity: 0;}
+    50%{opacity: 1;}
+    60%{opacity: 0;}
+}
+@keyframes animazione3{
+    60%{opacity: 0;}
+    90%{opacity: 1;}
+    100%{opacity: 0;}
+}
+
+/* Presentation Style */
 div.container{
     display:flex;
     flex-direction: row;
@@ -55,82 +91,32 @@ div.container{
     margin-left: auto;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
-
-div.buttons{
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: row;
-    align-items: center;
-    width: 30%;
+img.imageIcon{
     margin-left: auto;
     margin-right: auto;
-    margin-top: 6em;
+    margin-top: 2.7em;
+    display: flex;
+    width: 13em;
+    height: 13em;
+    animation-duration: 5s;
+    animation-name: rotation;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-direction: alternate-reverse;
 }
-
-.button{
-    background-color: #c00000;
-    font-size: 2em;
-    font-weight: bold;
-    color: white;
-    padding: 0.5em 2em 0.5em 2em;
-    border-radius: 30px;
-    border-style: none;
-}
-
-.button:hover{
-    color: #c00000;
-    box-shadow:0px 0px 20px #c00000;
-    font-weight: bold;
-    border-color: #c00000;
-    background-color: #ffc000;
-    transform: translateY(-10%);
-    transition-duration: 300ms;
-}
-/* Presentation */
-@keyframes colori{
-    0%{background-position: 0 50%;}
-    50%{background-position: 100% 50%;}
-    100%{background-position: 0 50%;}
-}
-
-
-@keyframes animazione1{
-    0%{opacity: 0;}
-    20%{opacity: 1;}
-    30%{opacity: 0;}
-}
-
-@keyframes animazione2{
-    30%{opacity: 0;}
-    50%{opacity: 1;}
-    60%{opacity: 0;}
-}
-
-@keyframes animazione3{
-    60%{opacity: 0;}
-    90%{opacity: 1;}
-    100%{opacity: 0;}
-}
-/*     */
-
 div.box1{
-
     opacity: 0.0;
-    animation: animazione1 15s normal infinite;
-
+    animation: animazione1 10s normal infinite;
 }
 
 div.box2{
-
     opacity: 0.0;
-    animation: animazione2 15s normal infinite;
-
+    animation: animazione2 10s normal infinite;
 }
 
 div.box3 {
-
     opacity: 0.0;
-    animation: animazione3 15s normal infinite;
+    animation: animazione3 10s normal infinite;
 }
 
 p.title {
@@ -138,6 +124,7 @@ p.title {
     text-align: center;
     font-weight: bold;
     color: white;
+    user-select: none;
 }
 
 
