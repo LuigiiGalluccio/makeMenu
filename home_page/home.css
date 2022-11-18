@@ -16,7 +16,8 @@ img.logo {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 4em;
-    display: block;
+    display: flex;
+
 }
 
 /* Log/Reg Button Style */
@@ -30,6 +31,7 @@ div.buttons{
     margin-right: auto;
     margin-top: 6em;
 }
+
 .button{
     background-color: #c00000;
     font-size: 2em;
@@ -39,6 +41,7 @@ div.buttons{
     border-radius: 30px;
     border-style: none;
 }
+
 .button:hover{
     color: #c00000;
     box-shadow:0px 0px 20px #c00000;
@@ -85,7 +88,7 @@ div.container{
     align-items: center;
     background-size: 300% 300%;
     animation: colori infinite 10s ease-in-out;
-    border-radius: 100px;
+    border-radius: 110px;
     width: 65%;
     margin-right: auto;
     margin-left: auto;
@@ -126,5 +129,8 @@ p.title {
     color: white;
     user-select: none;
 }
+
+
+
 
 
