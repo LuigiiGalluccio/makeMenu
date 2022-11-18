@@ -130,6 +130,34 @@ p.title {
     user-select: none;
 }
 
+div.navbar{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+
+}
+
+div.navbar a {
+    float: left;
+    display: block;
+    color: #c00000;
+    padding: 1em;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+div.navbar a:hover {
+    float: left;
+    display: block;
+    color: black;
+    padding: 1em;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+
 
 
 
