@@ -11,7 +11,18 @@
 img.logo {
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 8em;
     display: block;
+}
+
+@keyframes rotation {
+    from{ transform: rotate(10deg);}
+    to{ transform: rotate(-10deg); }
+}
+
+@keyframes textAni {
+    from{ color: #c00000; text-shadow: 0px 0px 5px #ffc000; }
+    to{ color: #ffc000; text-shadow: 0px 0px 5px #c00000;}
 }
 
 img.imageIcon{
@@ -20,6 +31,11 @@ img.imageIcon{
     display: flex;
     width: 13em;
     height: 13em;
+    animation-duration: 5s;
+    animation-name: rotation;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-direction: alternate-reverse;
 }
 
 div.container{
@@ -63,13 +79,17 @@ p.title {
     font-size: 2.3em;
     text-align: center;
     font-weight: bold;
+    animation-name: textAni;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+    animation-timing-function: linear;
 }
 
 
 p.description {
     font-size: 2em;
     text-align: center;
-
 }
 
 
