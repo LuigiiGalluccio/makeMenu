@@ -28,6 +28,7 @@ img.logo {
 img.imageIcon{
     margin-left: auto;
     margin-right: auto;
+    margin-top: 2em;
     display: flex;
     width: 13em;
     height: 13em;
@@ -36,40 +37,64 @@ img.imageIcon{
     animation-iteration-count: infinite;
     animation-timing-function: linear;
     animation-direction: alternate-reverse;
+
 }
 
 div.container{
-    margin-top: 6em;
-    height: 300px;
-    display: flex;
-    flex-direction: row;
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    margin-top: 6.5em;
+    background-color: red;
+    padding: 10em;
+    border-radius: 70px;
 }
 
 /* Presentation */
-div.screen1{
-    padding: 1.5em;
-    border-right-style: solid;
-    border-right-color: rgba(127, 125, 125, 0.2);
-    border-radius: 15px;
+
+@keyframes animazione1{
+    0%{opacity: 0;}
+    20%{opacity: 1;}
+    30%{opacity: 0;}
+}
+@keyframes animazione2{
+    30%{opacity: 0;}
+    50%{opacity: 1;}
+    60%{opacity: 0;}
+}
+@keyframes animazione3{
+    60%{opacity: 0;}
+    90%{opacity: 1;}
+    100%{opacity: 0;}
+}
+
+div.box1{
+    position: absolute;
+    left:45%;
+    opacity: 0.0;
+    animation: animazione1 20s normal infinite;
     /*background-image:  linear-gradient(90deg, #20abab, rgba(12, 66, 201, 0.5));*/
     /*background-image:  linear-gradient(90deg, #c00000, #ffc000);*/
     /*background-image:  linear-gradient(90deg, #c25fb6, rgba(106, 1, 117, 0.77));*/
 }
 
-div.screen2{
-    padding: 1.5em;
-    border-right-style: solid;
-    border-right-color: rgba(127, 125, 125, 0.2);
-    border-radius: 15px;
+div.box2{
+    position: absolute;
+    left:45%;
+    opacity: 0.0;
+    animation: animazione2 20s normal infinite;
     /*background-image:  linear-gradient(90deg, #20abab, rgba(12, 66, 201, 0.5));*/
     /*background-image:  linear-gradient(90deg, #c00000, #ffc000);*/
     /*background-image:  linear-gradient(90deg, #c25fb6, rgba(106, 1, 117, 0.77));*/
 }
 
-div.screen3{
-    padding: 1.5em;
+div.box3{
+    position: absolute;
+    left:45%;
+    opacity: 0.0;
+    animation: animazione3 20s normal infinite;
     /*background-image:  linear-gradient(90deg, #20abab, rgba(12, 66, 201, 0.5));*/
     /*background-image:  linear-gradient(90deg, #c00000, #ffc000);*/
     /*background-image:  linear-gradient(90deg, #c25fb6, rgba(106, 1, 117, 0.77));*/
