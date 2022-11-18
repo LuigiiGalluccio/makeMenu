@@ -1,13 +1,19 @@
 /* default font */
 *{
-    font-family: 'Century Gothic'
+    font-family: "Eri Light Serif";
 }
 
+body{
+    background-image: linear-gradient(216.7deg, #ebe5e5 60%, #ffc000 60%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
 /* Centered logo */
 .center{
     display: block;
     margin:auto;
-    margin-bottom: 5em;
+    margin-bottom: 2em;
 }
 
 /* Welcome message style */
@@ -22,7 +28,9 @@ h3{
 /* form box style */
 div.box{
     background: #ffc000;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1em;
     padding: 20px;
     width: 25em;
     border-radius: 50px;

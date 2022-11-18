@@ -2,16 +2,22 @@
 *{
     font-family: "Eri Light Serif";
     font-size: 0.93em;
+}
 
 
+body{
+    background-image: linear-gradient(216.7deg, #ebe5e5 60%, #ffc000 60%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 
 }
+
 
 /* SVG Logo */
 img.logo {
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 8em;
+    margin-bottom: 4em;
     display: block;
 }
 
@@ -20,15 +26,10 @@ img.logo {
     to{ transform: rotate(-10deg); }
 }
 
-@keyframes textAni {
-    from{ color: #c00000; text-shadow: 0px 0px 5px #ffc000; }
-    to{ color: #ffc000; text-shadow: 0px 0px 5px #c00000;}
-}
-
 img.imageIcon{
     margin-left: auto;
     margin-right: auto;
-    margin-top: 2em;
+    margin-top: 2.7em;
     display: flex;
     width: 13em;
     height: 13em;
@@ -37,84 +38,106 @@ img.imageIcon{
     animation-iteration-count: infinite;
     animation-timing-function: linear;
     animation-direction: alternate-reverse;
-
 }
 
 div.container{
     display:flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
-    margin-top: 6.5em;
-    background-color: red;
-    padding: 10em;
-    border-radius: 70px;
+    background: linear-gradient(45deg,#c00000,#ffc000);
+    background-size: 300% 300%;
+    animation: colori infinite 10s ease-in-out;
+    border-radius: 100px;
+    width: 65%;
+    margin-right: auto;
+    margin-left: auto;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
+div.buttons{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    align-items: center;
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 6em;
+}
+
+.button{
+    background-color: #c00000;
+    font-size: 2em;
+    font-weight: bold;
+    color: white;
+    padding: 0.5em 2em 0.5em 2em;
+    border-radius: 30px;
+    border-style: none;
+}
+
+.button:hover{
+    color: #c00000;
+    box-shadow:0px 0px 20px #c00000;
+    font-weight: bold;
+    border-color: #c00000;
+    background-color: #ffc000;
+    transform: translateY(-10%);
+    transition-duration: 300ms;
+}
 /* Presentation */
+@keyframes colori{
+    0%{background-position: 0 50%;}
+    50%{background-position: 100% 50%;}
+    100%{background-position: 0 50%;}
+}
+
 
 @keyframes animazione1{
     0%{opacity: 0;}
     20%{opacity: 1;}
     30%{opacity: 0;}
 }
+
 @keyframes animazione2{
     30%{opacity: 0;}
     50%{opacity: 1;}
     60%{opacity: 0;}
 }
+
 @keyframes animazione3{
     60%{opacity: 0;}
     90%{opacity: 1;}
     100%{opacity: 0;}
 }
+/*     */
 
 div.box1{
-    position: absolute;
-    left:45%;
+
     opacity: 0.0;
-    animation: animazione1 20s normal infinite;
-    /*background-image:  linear-gradient(90deg, #20abab, rgba(12, 66, 201, 0.5));*/
-    /*background-image:  linear-gradient(90deg, #c00000, #ffc000);*/
-    /*background-image:  linear-gradient(90deg, #c25fb6, rgba(106, 1, 117, 0.77));*/
+    animation: animazione1 15s normal infinite;
+
 }
 
 div.box2{
-    position: absolute;
-    left:45%;
+
     opacity: 0.0;
-    animation: animazione2 20s normal infinite;
-    /*background-image:  linear-gradient(90deg, #20abab, rgba(12, 66, 201, 0.5));*/
-    /*background-image:  linear-gradient(90deg, #c00000, #ffc000);*/
-    /*background-image:  linear-gradient(90deg, #c25fb6, rgba(106, 1, 117, 0.77));*/
+    animation: animazione2 15s normal infinite;
+
 }
 
-div.box3{
-    position: absolute;
-    left:45%;
+div.box3 {
+
     opacity: 0.0;
-    animation: animazione3 20s normal infinite;
-    /*background-image:  linear-gradient(90deg, #20abab, rgba(12, 66, 201, 0.5));*/
-    /*background-image:  linear-gradient(90deg, #c00000, #ffc000);*/
-    /*background-image:  linear-gradient(90deg, #c25fb6, rgba(106, 1, 117, 0.77));*/
+    animation: animazione3 15s normal infinite;
 }
 
 p.title {
-    font-size: 2.3em;
+    font-size: 2.8em;
     text-align: center;
     font-weight: bold;
-    animation-name: textAni;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate-reverse;
-    animation-timing-function: linear;
-}
-
-
-p.description {
-    font-size: 2em;
-    text-align: center;
+    color: white;
 }
 
 
