@@ -1,25 +1,75 @@
 /* generic font */
 *{
-    font-family: "Century Gothic";
+    font-family: "Eri Light Serif";
+    font-size: 0.93em;
+
+
+
 }
 
 /* SVG Logo */
-img{
+img.logo {
     margin-left: auto;
     margin-right: auto;
     display: block;
 }
 
+img.imageIcon{
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    width: 13em;
+    height: 13em;
+}
+
+div.container{
+    margin-top: 6em;
+    height: 300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
 /* Presentation */
-div.screen{
-    border-radius: 30px;
-    background-image:  linear-gradient(90deg, #20abab, rgba(12, 66, 201, 0.5));
+div.screen1{
+    padding: 1.5em;
+    border-right-style: solid;
+    border-right-color: rgba(127, 125, 125, 0.2);
+    border-radius: 15px;
+    /*background-image:  linear-gradient(90deg, #20abab, rgba(12, 66, 201, 0.5));*/
+    /*background-image:  linear-gradient(90deg, #c00000, #ffc000);*/
     /*background-image:  linear-gradient(90deg, #c25fb6, rgba(106, 1, 117, 0.77));*/
 }
+
+div.screen2{
+    padding: 1.5em;
+    border-right-style: solid;
+    border-right-color: rgba(127, 125, 125, 0.2);
+    border-radius: 15px;
+    /*background-image:  linear-gradient(90deg, #20abab, rgba(12, 66, 201, 0.5));*/
+    /*background-image:  linear-gradient(90deg, #c00000, #ffc000);*/
+    /*background-image:  linear-gradient(90deg, #c25fb6, rgba(106, 1, 117, 0.77));*/
+}
+
+div.screen3{
+    padding: 1.5em;
+    /*background-image:  linear-gradient(90deg, #20abab, rgba(12, 66, 201, 0.5));*/
+    /*background-image:  linear-gradient(90deg, #c00000, #ffc000);*/
+    /*background-image:  linear-gradient(90deg, #c25fb6, rgba(106, 1, 117, 0.77));*/
+}
+
+p.title {
+    font-size: 2.3em;
+    text-align: center;
+    font-weight: bold;
+}
+
 
 p.description {
     font-size: 2em;
     text-align: center;
-    padding-bottom: 1em;
-    font-weight: bold;
+
 }
+
+
