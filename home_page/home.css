@@ -17,7 +17,6 @@ img.logo {
     margin-right: auto;
     margin-bottom: 4em;
     display: flex;
-
 }
 
 /* Log/Reg Button Style */
@@ -50,6 +49,14 @@ div.buttons{
     transform: translateY(-10%);
     transition-duration: 200ms;
 }
+
+.button:not(:hover){
+    transform: translateY(+10%);
+    transition-duration: 200ms;
+
+}
+
+
 /* Animation of Presentation */
 @keyframes rotation {
     from{ transform: rotate(10deg);}
