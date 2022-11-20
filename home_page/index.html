@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="home.css" type="text/css">
     <title>makeMenu</title>
+
+    <script>
+        function show(){
+            var overlay = document.getElementById('overlay');
+            overlay.style.visibility = "visible";
+        }
+    </script>
+
 </head>
 <body>
 
@@ -15,7 +23,6 @@
             <img src="subscribe.svg" class="imageIcon" alt="subscribe icon">
             <p class="title">REGISTER</p>
         </div>
-
         <div class="box2">
             <img src="create.svg" class="imageIcon" alt="create icon">
             <p class="title">PERSONALIZE</p>
@@ -34,8 +41,20 @@
 </div>
 
 <div class="navbar">
-    <a href="">What's makeMenu?</a>
-    <a href="">Contacts</a>
+    <button onclick="show()">What's makeMenu</button>
+        <div class="overlay" id="overlay" onclick="document.getElementById('overlay').style = hidden;">
+            <p class="description">
+                He comes to the rescue of the restaurateurs.
+                It allows the creation of the ad hoc menu for each restaurateur in a simple and intuitive way.
+                After the creation of the customized menu allows you to export it via PDF for printing and
+                QRCode so you can use it for your catering activities
+            </p>
+            <p class="click">Click anywhere to go back</p>
+            <img src="logo.svg" class="logo2" alt="logo">
+            <p class="firma"> developer team</p>
+        </div>
+    <button>Contacts</button>
+
 </div>
 </body>
 </html>

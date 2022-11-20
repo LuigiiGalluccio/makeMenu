@@ -134,10 +134,9 @@ div.navbar{
     position: fixed;
     bottom: 0;
     width: 100%;
-
 }
 
-div.navbar a {
+div.navbar button {
     float: left;
     display: block;
     color: #c00000;
@@ -145,9 +144,12 @@ div.navbar a {
     text-decoration: none;
     font-size: 17px;
     font-weight: bold;
+    background: rgba(0,0,0,0);
+    border:0;
+
 }
 
-div.navbar a:hover {
+div.navbar button:hover {
     float: left;
     display: block;
     color: black;
@@ -155,9 +157,58 @@ div.navbar a:hover {
     text-decoration: none;
     font-size: 17px;
     font-weight: bold;
+    background: rgba(0,0,0,0);
+    border:0;
 }
 
+div.overlay{
+    position: fixed;
+    display: flex;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+    visibility: hidden;
+    opacity: 0.8;
+    cursor: pointer;
+}
 
+p.description{
+    position: fixed;
+    font-size: 3.5em;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    user-select: none;
+    width: 75%;
+    border-style: double;
+    border-radius: 8px;
+    border-width: 10px;
+}
+
+img.logo2{
+    align-self: flex-end;
+    width: 10%;
+}
+
+p.click{
+    position: fixed;
+    bottom: 50px;
+    font-size: 3em;
+    border-style: solid;
+}
+
+p.firma{
+    align-self: flex-end;
+    font-size: 17px;
+    margin-bottom: 12px;
+}
 
 
 
