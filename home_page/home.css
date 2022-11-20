@@ -174,7 +174,7 @@ div.overlay{
     background-color: black;
     color: white;
     visibility: hidden;
-    opacity: 0.8;
+    opacity: 0.87;
     cursor: pointer;
 }
 
@@ -187,7 +187,7 @@ p.description{
     user-select: none;
     width: 75%;
     border-style: double;
-    border-radius: 8px;
+    border-radius: 20px;
     border-width: 10px;
     top: 85px;
 }
@@ -199,15 +199,17 @@ img.logo2{
 
 p.click{
     position: fixed;
-    bottom: 100px;
-    font-size: 3em;
-    border-style: solid;
+    bottom: 205px;
+    font-size: 2.4em;
+    color: #ffc000;
+    font-weight: bold;
+
 }
 
 p.firma{
     align-self: flex-end;
     font-size: 17px;
-    margin-bottom: 7px;
+    margin-bottom: 10px;
 }
 
 
