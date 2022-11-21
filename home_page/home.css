@@ -178,15 +178,15 @@ div.overlay{
     height: 100%;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     background-color: black;
     color: white;
     visibility: hidden;
-    opacity: 0.87;
+    opacity: 0.9;
     cursor: pointer;
 }
 
 p.description{
-    position: fixed;
     font-size: 3.5em;
     text-align: center;
     font-weight: bold;
@@ -196,16 +196,15 @@ p.description{
     border-style: double;
     border-radius: 20px;
     border-width: 10px;
-    top: 85px;
 }
 
 img.logo2{
-    align-self: flex-end;
-    width: 10%;
+    width: 15%;
+    position: fixed;
+    bottom: 5px;
 }
 
 p.click{
-    position: fixed;
     bottom: 205px;
     font-size: 2.4em;
     color: #ffc000;
@@ -213,11 +212,11 @@ p.click{
 
 }
 
-p.firma{
-    align-self: flex-end;
-    font-size: 17px;
-    margin-bottom: 10px;
+.titleDescription{
+    color: red;
+    font-size: 5em;
 }
+
 
 
 
