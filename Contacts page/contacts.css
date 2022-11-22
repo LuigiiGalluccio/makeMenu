@@ -43,15 +43,13 @@ p.description{
     text-align: center;
 }
 
-img.developer:hover{
-    transform: translateY(-10%);
-    transition-duration: 300ms;
+p.mail{
+    font-size: 1em;
+    text-align: center;
+
 }
 
-img.developer:not(:hover){
-    transform: translateY(+10%);
-    transition-duration: 300ms;
-}
+
 
 
 
