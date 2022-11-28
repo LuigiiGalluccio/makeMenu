@@ -1,27 +1,62 @@
+/* generic font */
+*{
+    font-family: "Eri Light Serif";
+    font-size: 0.93em;
+    font-weight: bold;
+}
+
 #container{
     display: flex;
 }
+
+/* Tool container Style */
 #tool{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    align-self: flex-start;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-content: space-between;
-    width: 10em;
-    height: 10em;
+    width: 25em;
+    height: 100%;
     background-color: #4b4b4b;
-}
-#export_tool{
-    position: absolute;
-    width: 80%;
-    left: 20%;
-    top: 1px;
-    display: flex;
-    background-color: pink;
-    align-content: end;
-    justify-content: flex-end;
-    flex-direction: row;
+    z-index: 1;
 }
 
+#tool > button{
+    background-color: rgb(66, 64, 64);
+    border-style: none;
+    height: 4em;
+    padding: 1em;
+    margin-top: 0.5em;
+    color: white;
+}
+#tool > button:hover {
+    color: red;
+}
+.linkHome{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom-style: ridge;
+    border-bottom-color: black
+}
+img{
+    max-width: 25em;
+}
+
+/* Export tool style */
+#export_tool{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    margin-left: auto;
+    display: flex;
+    align-content: end;
+    justify-content: flex-end;
+    background-color: #ffc000;
+}
 .exportButt{
     margin: 1em;
 }
