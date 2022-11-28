@@ -1,0 +1,27 @@
+#container{
+    display: flex;
+}
+#tool{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: space-between;
+    width: 10em;
+    height: 10em;
+    background-color: #4b4b4b;
+}
+#export_tool{
+    position: absolute;
+    width: 80%;
+    left: 20%;
+    top: 1px;
+    display: flex;
+    background-color: pink;
+    align-content: end;
+    justify-content: flex-end;
+    flex-direction: row;
+}
+
+.exportButt{
+    margin: 1em;
+}
