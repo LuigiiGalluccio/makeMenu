@@ -1,4 +1,5 @@
 * Aggiungere item ai rispettivi titoli
+* Aggiungere funzione per il cambio colore degli item
 * Aggiungere Overlay sulla edit mode all'inizio per la scelta del business
     - Eliminare la pagina select business dal progetto
 * Aggiungere bottone che mostra l'overlay del business
