@@ -4,19 +4,40 @@
     <meta charset="UTF-8">
     <title>makeMenu</title>
     <link rel="stylesheet" href="edit_page.css">
+    <script src="edit_page.js" type="text/javascript"></script>
     </head>
 <body>
     <div id="container">
+
+        <!-- Tool menu -->
         <div id="tool">
             <a href="../home_page/index.html" class="linkHome"><img src="../home_page/logo.svg"></a>
-            <button>Bottone1</button>
-            <button>Bottone2</button>
-            <button>Bottone3</button>
-        </div>
-        <div id="export_tool">
+            <p>Manage Entries</p>
+            <button onclick="addSection()">Add Section</button>
+            <button onclick="addItem()">Add Item</button>
+            <button onclick="removeMode(this)">Remove Mode</button>
 
-            <button class="exportButt">Generate QR-Code</button>
-            <button class="exportButt">Export in PDF</button>
+            <p>Colors</p>
+            <button onclick="showHeaderColor()">Section Color</button>
+            <input type="color" id="colorPickerSection" onchange="changeColorSection(this)">
+            <button onclick="showTitleColor()">Title Color</button>
+            <input type="color" id="colorPickerTitle" onchange="changeColorTitle(this)">
+            <button onclick="showItemColor()">Item Color</button>
+            <input type="color" id="colorPickerItem" onchange="changeColorItem(this)">
+
+            <p>Other Options</p>
+            <button onclick="setLayoutA4()">Set Layout A4</button>
+        </div>
+
+        <!-- Export Tool menu -->
+        <div id="export_tool">
+            <button>Generate QR-Code</button>
+            <button>Export in PDF</button>
+        </div>
+
+        <!-- Menu Frame Container -->
+        <div id="frameContainer">
+            <iframe src="./work_space.html" class="frame" id="myFrame"></iframe>
         </div>
     </div>
 </body>

@@ -1,0 +1,10 @@
+* Aggiungere item ai rispettivi titoli
+* Aggiungere Overlay sulla edit mode all'inizio per la scelta del business
+    - Eliminare la pagina select business dal progetto
+* Aggiungere bottone che mostra l'overlay del business
+* Aggiungere bottone per sfondo a tinta unita
+* Creare fogli di stile per i vari business e testarne la funzionalità con i collegamenti
+* Stabilire il layout della pagina HTML che ospita il menu
+    - Possibile soluzione: <table>
+* Definire uno stile di default per la pagina che ospita il menu (font, dimensioni, disposizione degli elementi)
+    - Sconsiglio contenitore flessibile
