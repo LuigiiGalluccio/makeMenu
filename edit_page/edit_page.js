@@ -9,37 +9,89 @@ function setLayoutA4(){
 function addSection(){
     let myFrame = document.getElementById('myFrame');
     let containerMenu = myFrame.contentWindow.document.querySelector("#menuContainer");
+    let newElement = newSectionTitle();
+    let newTable = newTableSection(newElement);
 
-    //New element and yours properties, include empty text check
-    let newElement = document.createElement("h1");
-    newElement.innerHTML = "New Section";
-    newElement.setAttribute("contenteditable","true");
-    newElement.style.cursor = "pointer";
-    newElement.style.color = document.getElementById("colorPickerSection").value;
-    newElement.onfocus = function (){
-        if(this.innerHTML === "New Section" || this.innerHTML.includes("Empty Section"))
-            this.innerHTML = ""
-    };
-    newElement.onblur = function (){
-        if(this.innerHTML === "")
-            this.innerHTML = "<p title='WARNING: Insert name of section!' style='display: inline; background-color: red'>Empty Section " + "&#128721" + "</p>";
-        this.setAttribute("id",newElement.innerHTML);
-    };
+    //Add new element at main container
+    containerMenu.appendChild(newElement);
+    containerMenu.appendChild(newTable);
+}
+
+/** Function for apply attribute to element */
+function setElementProperties(element){
+    element.setAttribute("contenteditable","true");
+    element.style.cursor = "pointer";
 
     //If user type enter during the edit section, the header lost focus
-    newElement.addEventListener("keypress",function (event){
+    element.addEventListener("keypress",function (event){
         if(event.key === "Enter")
             this.blur();
     });
 
-    //Add new element at main container
-    containerMenu.appendChild(newElement);
+    //Clear textbox if content is default
+    element.onfocus = function (){
+        if(this.innerHTML.includes("Empty Section") || this.innerHTML.includes("New"))
+            this.innerHTML = "";
+    };
+}
+/** Add Section Title */
+function newSectionTitle(){
+    let newElement = document.createElement("h1");
+    setElementProperties(newElement );
+
+    newElement.innerHTML = "New Section";
+    newElement.style.color = document.getElementById("colorPickerSection").value;
+
+
+    newElement.onblur = function (){
+        if(this.innerHTML === "")
+            this.innerHTML = "<p title='WARNING: Insert name of section!' style='display: inline; background-color: red'>Empty Section " + "&#128721" + "</p>";
+        this.setAttribute("id",newElement.innerHTML);
+        myFrame.contentWindow.document.querySelector(this.nextSibling.setAttribute("id",newElement.innerHTML + "T"));
+    };
+
+    newElement.ondblclick = function (){
+        let tableOfSection = myFrame.contentWindow.document.getElementById(this.id + "T");
+        addItemToTable(tableOfSection);
+    }
+
+    return newElement;
+}
+/** Create New Table Section Function */
+function newTableSection(){
+    let newTable = document.createElement("table");
+    addItemToTable(newTable);
+    return newTable;
+}
+function addItemToTable(newTable){
+    let newRow = document.createElement("tr");
+    let newTitle = document.createElement("td");
+    let newDescription = document.createElement("td");
+    let newPrice = document.createElement("td");
+
+    //New title properties
+    setElementProperties(newTitle);
+    newTitle.innerHTML = "New Title";
+
+    //New Description properties
+    setElementProperties(newDescription);
+    newDescription.innerHTML = "New Description";
+
+    //new Price properties
+    setElementProperties(newPrice);
+    newPrice.innerHTML = "New Price";
+
+    newRow.appendChild(newTitle);
+    newRow.appendChild(newDescription);
+    newRow.appendChild(newPrice);
+    newTable.appendChild(newRow);
 }
 
 /** Remove Mode Element */
 function removeMode(remButton){
     let toolButtons = document.getElementById('tool').querySelectorAll("button");
     let sections = document.getElementById("myFrame").contentWindow.document.querySelectorAll("h1");
+    let allRow = document.getElementById("myFrame").contentWindow.document.querySelectorAll("tr");
 
     if(remButton.innerHTML === "Remove Mode") {
         toolButtons.forEach(button => {
@@ -50,12 +102,17 @@ function removeMode(remButton){
         });
         remButton.innerHTML = "Exit from remove mode";
 
+        allRow.forEach(row =>{
+           row.setAttribute("onclick","deleteFunc(this)");
+        });
+
         sections.forEach(element =>{
-            if(element !== sections[0])
+            if(element !== sections[0]){
                 element.setAttribute("onclick","deleteFunc(this)");
+            }
             element.contentEditable = "false";
         });
-        //sections[0].setAttribute("onclick","");
+
         alert("Remove Mode Enabled: Click on element for delete it\nATTENTION: If you delete a section, you will also delete all its items!");
     }else{
         toolButtons.forEach(button => {
@@ -75,7 +132,9 @@ function removeMode(remButton){
 
 }
 function deleteFunc(element){
-    element.remove();
+    if(element.tagName === "H1")
+        element.nextElementSibling.remove();
+    element.remove();x
 }
 
 /** Show and Edit color picker for Color Text Section */
@@ -98,7 +157,11 @@ function showItemColor(){
     colorPicker.click();
 }
 function changeColorItem(picker){
-
+    let myFrame = document.getElementById("myFrame");
+    let items = myFrame.contentWindow.document.querySelectorAll("td");
+    items.forEach(item =>{
+      item.style.color = picker.value;
+    });
 }
 
 /** Show and Edit color picker for Color Text Title */
