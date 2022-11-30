@@ -212,3 +212,8 @@ function changeBackgroundColor(picker){
     let myFrame = document.getElementById("myFrame");
     myFrame.contentWindow.document.body.style.backgroundColor = picker.value
 }
+
+function show(){
+    var overlay = document.getElementById('overlay');
+    overlay.style.visibility = "visible";
+}

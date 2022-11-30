@@ -34,7 +34,7 @@
             <button onclick="setLayoutA4()">Set Layout A4</button>
 
             <p>How to</p>
-            <button>Add item to section</button>
+            <button onclick="show()">Add item to section</button>
             <button>Add description field to item</button>
             <button>Resize the menu page</button>
         </div>
@@ -49,6 +49,10 @@
         <div id="frameContainer">
             <iframe src="./work_space.html" class="frame" id="myFrame"></iframe>
         </div>
+    </div>
+
+    <div class="overlay" id="overlay" onclick="document.getElementById('overlay').style= hidden">
+            LPC
     </div>
 </body>
 </html>
