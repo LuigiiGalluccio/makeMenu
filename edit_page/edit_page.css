@@ -33,7 +33,7 @@ p{
     align-content: space-between;
     width: 25em;
     height: 300%;
-    background-color: #4b4b4b;
+    background-color: #393838;
     z-index: 1;
 }
 #tool > button{
@@ -61,11 +61,12 @@ input[type="color"]{
     display: flex;
     align-items: center;
     justify-content: center;
-    border-bottom-style: ridge;
-    border-bottom-color: black
+    margin-top: 0.7em;
+    margin-bottom: 0.4em;
 }
+
 img{
-    max-width: 25em;
+    max-width: 28em;
 }
 
 /* Export tool style */
@@ -113,3 +114,9 @@ img{
     border-color: black;
     border-width: thin;
 }
+
+/*****************************************************
+SELECT
+**********************************************************/
+
+
