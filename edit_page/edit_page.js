@@ -71,18 +71,30 @@ function addItemToTable(newTable){
 
     //New title properties
     setElementProperties(newTitle);
+    newTitle.setAttribute("class","itemTitle");
+    newTitle.style.color = document.getElementById("colorPickerTitleItem").value;
     newTitle.innerHTML = "New Title";
 
     //New Description properties
     setElementProperties(newDescription);
+    newDescription.setAttribute("class","itemDescription");
     newDescription.innerHTML = "New Description";
 
     //new Price properties
     setElementProperties(newPrice);
+    newPrice.setAttribute("class","itemPrice");
     newPrice.innerHTML = "New Price";
 
+    newDescription.style.color = newPrice.style.color = document.getElementById("colorPickerItem").value;
+
+    //double click to add td description to table
+    newRow.ondblclick = function (){
+        newDescription.style.color =
+        newRow.firstChild.after(newDescription);
+    }
+
+    //add item to table
     newRow.appendChild(newTitle);
-    newRow.appendChild(newDescription);
     newRow.appendChild(newPrice);
     newTable.appendChild(newRow);
 }
@@ -160,7 +172,23 @@ function changeColorItem(picker){
     let myFrame = document.getElementById("myFrame");
     let items = myFrame.contentWindow.document.querySelectorAll("td");
     items.forEach(item =>{
-      item.style.color = picker.value;
+        if(!item.attributes.getNamedItem("class").value.includes("itemTitle"))
+            item.style.color = picker.value;
+            item.style.borderColor = "gray";
+    });
+}
+/** Show and Edit color picker for Color Text Title Item */
+function showTitleItemColor(){
+    let colorPicker = document.getElementById("colorPickerTitleItem");
+    colorPicker.click();
+}
+function changeColorTitleItem(picker){
+    let myFrame = document.getElementById("myFrame");
+    let items = myFrame.contentWindow.document.querySelectorAll("td");
+    items.forEach(item =>{
+        if(item.attributes.getNamedItem("class").value.includes("itemTitle"))
+            item.style.color = picker.value;
+            item.style.borderColor = "gray";
     });
 }
 
@@ -173,4 +201,14 @@ function changeColorTitle(picker){
     let myFrame = document.getElementById("myFrame");
     let titleElement = myFrame.contentWindow.document.getElementById("titleMenu");
     titleElement.style.color = picker.value;
+}
+
+/** Show and Edit color picker for Color Background Color */
+function showBackgroundColor(){
+    let colorPicker = document.getElementById("colorPickerBackground");
+    colorPicker.click();
+}
+function changeBackgroundColor(picker){
+    let myFrame = document.getElementById("myFrame");
+    myFrame.contentWindow.document.body.style.backgroundColor = picker.value
 }

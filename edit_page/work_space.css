@@ -5,9 +5,29 @@ body{
     background-color: white;
 }
 
-table, tr, td{
+tr, td{
     border-style: solid;
     min-width: 100%;
     border-radius: 10px;
+    border-color: gray;
     padding: 3px;
+}
+td.itemTitle{
+    font-weight: bold;
+}
+td.itemPrice{
+    text-align: right;
+}
+td.itemDescription{
+    text-align: center;
+    font-style: italic;
+}
+td.itemDescription::before{
+    content: "(";
+}
+td.itemDescription::after{
+    content: ")";
+}
+table{
+    min-width: 100%;
 }
