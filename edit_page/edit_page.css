@@ -76,14 +76,12 @@ img{
     padding: 0.5em;
     position: absolute;
     top: 0;
-    margin-left: auto;
     display: flex;
-    align-content: center;
     justify-content: flex-end;
     background-color: #ffc000;
 
 }
-#export_tool > .prova{
+#export_tool > .export{
     margin-right: 3em;
     background-color: #c00000;
     font-size: 1em;
@@ -100,6 +98,14 @@ img{
     background-color: white;
 }
 
+#export_tool > .tutorial{
+    background-color: #c00000;
+    font-size: 1em;
+    color: white;
+    padding: 0.5em 2em 0.5em 2em;
+    border-radius: 20px;
+    border-style: none;
+}
 /* frame style */
 #frameContainer{
     position: relative;
@@ -136,16 +142,6 @@ div.overlay{
     cursor: pointer;
 }
 
-#export_tool > .tutorial{
-    background-color: #c00000;
-    font-size: 1em;
-    color: white;
-    padding: 0.5em 2em 0.5em 2em;
-    border-radius: 20px;
-    border-style: none;
-    margin-right: 65em;
-}
-
 p.overlayDescription{
     font-size: 2em;
     text-align: center;
@@ -172,7 +168,7 @@ p.overlayTitle{
     border-width: 10px;
     width: 60%;
     margin: auto;
-    margin-top: 40px;
+    margin-top: 30px;
 
 }
 
@@ -180,6 +176,7 @@ img.logo2{
     width: 15%;
     bottom: 5px;
     margin: auto;
+    margin-bottom: 30px;
 
 }
 
@@ -189,5 +186,6 @@ p.click{
     color: #ffc000;
     font-weight: bold;
     margin: auto;
+    margin-top: 30px;
 }
 
