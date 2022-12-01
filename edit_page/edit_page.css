@@ -154,10 +154,11 @@ p.overlayDescription{
     border-width: 10px;
     margin: auto;
     justify-items: center;
-    background-color: #c00000;
+
 }
 
 p.overlayTitle{
+    background-color: #c00000;
     font-size: 2em;
     text-align: center;
     font-weight: bold;
