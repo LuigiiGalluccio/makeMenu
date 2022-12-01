@@ -9,9 +9,16 @@
 
 <body>
     <div class="row">
-
+        <div class="col-12">
+            <!-- Export Tool menu -->
+            <div id="export_tool">
+                <button class="export" onclick="show()">How To</button>
+                <button class="export">Generate QR-Code</button>
+                <button class="export">Export in PDF</button>
+            </div>
+        </div>
         <!-- Tool menu -->
-        <div class="col-4">
+        <div class="col-3">
             <div id="tool">
                 <a href="../home_page/index.html" class="linkHome"><img src="logo.svg"></a>
                 <p class="title_1">Manage Entries</p>
@@ -34,15 +41,6 @@
 
                 <p class="title_1">Other Options</p>
                 <button onclick="setLayoutA4()">Set Layout A4</button>
-            </div>
-        </div>
-
-        <div class="col-8">
-            <!-- Export Tool menu -->
-            <div id="export_tool">
-                <button class="export" onclick="show()">How To</button>
-                <button class="export">Generate QR-Code</button>
-                <button class="export">Export in PDF</button>
             </div>
         </div>
 
@@ -76,7 +74,5 @@
         </span>
             <p class="click">Click anywhere to go back</p>
             <img src="logo2.svg" class="logo2" alt="logo">
-
-
 </body>
 </html>

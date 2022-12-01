@@ -24,11 +24,13 @@ p.title_1{
 
 /* Tool container Style */
 #tool{
-    align-self: flex-start;
     display: flex;
     flex-direction: column;
     align-content: space-between;
+    justify-content: flex-start;
     background-color: #393838;
+    border-radius: 20px;
+    min-height: 53rem;
 }
 #tool > button{
     background-color: rgb(66, 64, 64);
@@ -65,17 +67,18 @@ img{
 
 /* Export tool style */
 #export_tool{
-    padding: 0.5em;
+    padding: 1rem;
     display: flex;
     justify-content: flex-end;
     background-color: #ffc000;
+    border-radius: 20px;
 }
 #export_tool > .export{
     margin-right: 3em;
     background-color: #c00000;
     font-size: 1em;
     color: white;
-    padding: 0.5em 2em 0.5em 2em;
+    padding: 2em 4em;
     border-radius: 20px;
     border-style: none;
 }
@@ -211,7 +214,16 @@ p.click{
 }
 
 @media only screen and (max-width: 1024px) {
+    [class*="col-"]{
+        width: 100%;
+    }
+    #export_tool{
+        justify-content: center;
+    }
+}
+
+@media only screen and (min-width: 1080px){
     #tool{
-        background-color: red;
+        width: 29em;
     }
 }
