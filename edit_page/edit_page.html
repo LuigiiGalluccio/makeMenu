@@ -12,11 +12,11 @@
         <!-- Tool menu -->
         <div id="tool">
             <a href="../home_page/index.html" class="linkHome"><img src="logo.svg"></a>
-            <p>Manage Entries</p>
+            <p class="title_1">Manage Entries</p>
             <button onclick="addSection()">Add Section</button>
             <button onclick="removeMode(this)">Remove Mode</button>
 
-            <p>Colors</p>
+            <p class="title_1">Colors</p>
             <button onclick="showHeaderColor()">Section Color</button>
             <input type="color" id="colorPickerSection" onchange="changeColorSection(this)">
             <button onclick="showTitleColor()">Title Color</button>
@@ -26,23 +26,19 @@
             <button onclick="showItemColor()">Item Color</button>
             <input type="color" id="colorPickerItem" onchange="changeColorItem(this)">
 
-            <p>Background</p>
+            <p class="title_1">Background</p>
             <button onclick="showBackgroundColor()">Background Solid Color</button>
             <input type="color" id="colorPickerBackground" onchange="changeBackgroundColor(this)">
 
-            <p>Other Options</p>
+            <p class="title_1">Other Options</p>
             <button onclick="setLayoutA4()">Set Layout A4</button>
-
-            <p>How to</p>
-            <button onclick="show()">Add item to section</button>
-            <button>Add description field to item</button>
-            <button>Resize the menu page</button>
         </div>
 
         <!-- Export Tool menu -->
         <div id="export_tool">
-            <button>Generate QR-Code</button>
-            <button>Export in PDF</button>
+            <button class="tutorial" onclick="show()">How To</button>
+            <button class="prova">Generate QR-Code</button>
+            <button class="prova">Export in PDF</button>
         </div>
 
         <!-- Menu Frame Container -->
@@ -52,7 +48,27 @@
     </div>
 
     <div class="overlay" id="overlay" onclick="document.getElementById('overlay').style= hidden">
-            LPC
-    </div>
+        <span>
+            <p class = "overlayTitle">Edit Elements</p>
+            <p class = "overlayDescription">Click on the elements to Edit them</p>
+        </span>
+
+        <span>
+            <p class = "overlayTitle">Add Description</p>
+            <p class = "overlayDescription">Double Click on the Title to add Description to the item</p>
+        </span>
+
+        <span>
+            <p class = "overlayTitle">Edit page size display</p>
+            <p class = "overlayDescription">We can Change the page size display</p>
+        </span>
+
+        <span>
+            <p class = "overlayTitle">Add item to Section</p>
+            <p class = "overlayDescription">Double Click on Section to add Item</p>
+        </span>
+            <p class="click">Click anywhere to go back</p>
+            <img src="logo2.svg" class="logo2" alt="logo">
+
 </body>
 </html>
