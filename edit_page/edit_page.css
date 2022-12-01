@@ -148,11 +148,12 @@ p.overlayDescription{
     color: white;
     user-select: none;
     width: 60%;
-    border-style: double;
-    border-radius: 10px;
-    border-width: 10px;
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 5px;
     margin: auto;
     justify-items: center;
+    border-top-style:none;
 
 }
 
@@ -163,12 +164,13 @@ p.overlayTitle{
     font-weight: bold;
     color: white;
     user-select: none;
-    border-style: double;
-    border-radius: 10px;
-    border-width: 10px;
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 5px;
     width: 60%;
     margin: auto;
     margin-top: 30px;
+    border-bottom-style:none;
 
 }
 
