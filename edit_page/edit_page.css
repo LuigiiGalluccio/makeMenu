@@ -24,17 +24,11 @@ p.title_1{
 
 /* Tool container Style */
 #tool{
-    position: absolute;
-    left: 0px;
-    top: 0px;
     align-self: flex-start;
     display: flex;
     flex-direction: column;
     align-content: space-between;
-    width: 25em;
-    height: 100%;
     background-color: #393838;
-    z-index: 1;
 }
 #tool > button{
     background-color: rgb(66, 64, 64);
@@ -71,15 +65,10 @@ img{
 
 /* Export tool style */
 #export_tool{
-    width: 100%;
-    height: 4em;
     padding: 0.5em;
-    position: absolute;
-    top: 0;
     display: flex;
     justify-content: flex-end;
     background-color: #ffc000;
-
 }
 #export_tool > .export{
     margin-right: 3em;
@@ -108,14 +97,14 @@ img{
 }
 /* frame style */
 #frameContainer{
-    position: relative;
-    top: 7em;
     margin: auto;
+    padding-left: 2em;
+    padding-right: 2em;
 }
 .frame{
-    height: 297mm;
-    width: 210mm;
     resize: both;
+    width: 100%;
+    height: 40rem;
     border-style: solid;
     border-color: black;
     border-width: thin;
@@ -191,3 +180,38 @@ p.click{
     margin-top: 30px;
 }
 
+*{ box-sizing: border-box; }
+
+/* definizione colonne */
+.col-1{width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+/* Ogni colonna avrà un padding di 15px e dovrà essere orientata verso sinistra */
+[class*="col-"] {
+    float: left;
+    padding-bottom: 2rem;
+
+}
+
+/* Risolve il problema degli elementi che si posiziona come se le colonne sinistre non esistessero */
+[class*="row-"]::after{
+    content: "";
+    clear: both;
+    display: table;
+}
+
+@media only screen and (max-width: 1024px) {
+    #tool{
+        background-color: red;
+    }
+}
