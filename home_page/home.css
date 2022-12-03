@@ -30,6 +30,7 @@ div.buttons{
     margin-right: auto;
     margin-top: 6em;
 }
+
 .button{
     background-color: #c00000;
     font-size: 2em;
@@ -182,24 +183,21 @@ div.overlay{
     background-color: black;
     color: white;
     visibility: hidden;
-    opacity: 0.9;
+    opacity: 0.96;
     cursor: pointer;
 }
 
 p.description{
-    font-size: 3.5em;
+    font-size: 3.2em;
     text-align: center;
     font-weight: bold;
     color: white;
     user-select: none;
     width: 75%;
-    border-style: double;
-    border-radius: 20px;
-    border-width: 10px;
 }
 
 img.logo2{
-    width: 15%;
+    width: 20%;
     position: fixed;
     bottom: 5px;
 }
@@ -213,8 +211,10 @@ p.click{
 }
 
 .titleDescription{
+    margin-top: 0.5em;
     color: red;
-    font-size: 5em;
+    font-size: 6em;
+    font-family: "Batuphat Script";
 }
 
 

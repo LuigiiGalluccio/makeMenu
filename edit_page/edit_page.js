@@ -217,3 +217,18 @@ function show(){
     var overlay = document.getElementById('overlay');
     overlay.style.visibility = "visible";
 }
+
+
+function openNav() {
+    document.getElementById("mySidenav").style.width = "350px";
+    document.getElementById("frameContainer").style.marginLeft = "350px";
+    document.getElementById("export_tool").style.marginLeft = "350px";
+
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("frameContainer").style.marginLeft = 0;
+    document.getElementById("export_tool").style.marginLeft = 0;
+}
+
