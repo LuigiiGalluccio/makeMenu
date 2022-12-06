@@ -1,0 +1,10 @@
+{
+  "name": "Progetto-TW2223",
+  "version": "1.0.0",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^6.8.0",
+    "passport": "^0.6.0",
+    "passport-google-oauth": "^2.0.0"
+  }
+}
