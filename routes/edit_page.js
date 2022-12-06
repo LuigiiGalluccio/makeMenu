@@ -1,3 +1,7 @@
+var express = require('express');
+var router = express.Router();
+
+
 /** Function for A4 layout */
 function setLayoutA4(){
     let x = document.getElementById("myFrame");
@@ -232,4 +236,4 @@ function closeNav() {
     document.getElementById("export_tool").style.marginLeft = 0;
 }
 
-
+module.exports = router;

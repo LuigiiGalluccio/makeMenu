@@ -15,6 +15,7 @@ var mongoose = require('mongoose');
 var indexRouter = require('./routes/index');
 var loginRouter = require('./routes/login');
 var accountRouter = require('./routes/account');
+var editRouter = require('./routes/edit_page');
 
 
 
@@ -52,6 +53,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/login', loginRouter);
 app.use('/account', accountRouter);
+app.use('/edit_page', editRouter);
 
 
 // catch 404 and forward to error handler
