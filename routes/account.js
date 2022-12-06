@@ -5,7 +5,7 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
 
     if(req.isAuthenticated())
-        res.render('logged_in/account');
+        res.render('logged_in/edit_page.ejs');
     else
         res.redirect('/login?failed=false');
 });
