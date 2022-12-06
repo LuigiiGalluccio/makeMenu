@@ -2,9 +2,20 @@
   "name": "Progetto-TW2223",
   "version": "1.0.0",
   "dependencies": {
+    "connect-mongo": "^4.6.0",
+    "cookie-parser": "^1.4.6",
+    "debug": "^4.3.4",
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.8",
     "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "http-errors": "^2.0.0",
     "mongoose": "^6.8.0",
+    "morgan": "^1.10.0",
     "passport": "^0.6.0",
     "passport-google-oauth": "^2.0.0"
+  },
+  "scripts": {
+    "start": "node ./bin/www"
   }
 }
