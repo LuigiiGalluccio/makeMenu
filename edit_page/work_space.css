@@ -31,3 +31,7 @@ td.itemDescription::after{
 table{
     min-width: 100%;
 }
+
+#titleMenu {
+    text-align: center;
+}
