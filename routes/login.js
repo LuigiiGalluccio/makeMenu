@@ -4,6 +4,8 @@ var passport = require("passport");
 var GoogleStrategy = require("passport-google-oauth").OAuth2Strategy;
 var Account = require('../models/Account');
 
+
+
 //Passport setup
 passport.use(new GoogleStrategy({
         clientID: process.env.GOOGLE_CLIENT_ID,
@@ -27,10 +29,9 @@ passport.use(new GoogleStrategy({
                 provider: profile.provider,
                 name: profile.name.givenName,
                 surname: profile.name.familyName,
-                profile_picture: profile.photos[0].value
+                profile_picture: profile.photos[0].value,
             });
         }
-
         cb(null,user);
     }));
 
