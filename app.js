@@ -42,6 +42,7 @@ app.use(passport.session());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
+app.set('views/logged_in',path.join(__dirname, 'views/logged_in'));
 app.set('view engine', 'ejs');
 
 app.use(logger('dev'));

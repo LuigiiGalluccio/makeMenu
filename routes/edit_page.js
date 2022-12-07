@@ -150,7 +150,7 @@ function removeMode(remButton){
 function deleteFunc(element){
     if(element.tagName === "H1")
         element.nextElementSibling.remove();
-    element.remove();x
+    element.remove();
 }
 
 /** Show and Edit color picker for Color Text Section */
@@ -223,12 +223,12 @@ function show(){
 }
 
 
-function openNav() {
+router.get(function openNav() {
     document.getElementById("mySidenav").style.width = "350px";
     document.getElementById("frameContainer").style.marginLeft = "350px";
     document.getElementById("export_tool").style.marginLeft = "350px";
 
-}
+});
 
 function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
