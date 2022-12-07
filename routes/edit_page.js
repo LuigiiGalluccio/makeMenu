@@ -202,7 +202,7 @@ function showTitleColor(){
     colorPicker.click();
 }
 function changeColorTitle(picker){
-    let myFrame = document.getElementById("myFrame");
+    let myframe = document.getElementById("myFrame");
     let titleElement = myFrame.contentWindow.document.getElementById("titleMenu");
     titleElement.style.color = picker.value;
 }
