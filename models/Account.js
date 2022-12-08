@@ -20,7 +20,30 @@ var AccountSchema = new mongoose.Schema({
     profile_picture:{
         type: String,
         required: false
-    }
+    },
+    menu:{
+        sections:[{
+            menu_id:{
+                type: String,
+                required: true
+            },
+            items:[{
+                title:{
+                    type: String,
+
+                },
+                description:{
+                    type: String,
+
+                },
+                price:{
+                    type: String,
+
+                },
+            }]
+
+        }],
+    },
 });
 
 module.exports = mongoose.model('Account',AccountSchema);

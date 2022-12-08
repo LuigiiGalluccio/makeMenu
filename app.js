@@ -15,6 +15,7 @@ var mongoose = require('mongoose');
 var indexRouter = require('./routes/index');
 var loginRouter = require('./routes/login');
 var accountRouter = require('./routes/account');
+var editRouter = require('./routes/edit_page');
 
 
 
@@ -41,6 +42,7 @@ app.use(passport.session());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
+app.set('views/logged_in',path.join(__dirname, 'views/logged_in'));
 app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
@@ -52,6 +54,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/login', loginRouter);
 app.use('/account', accountRouter);
+app.use('/edit_page', editRouter);
 
 
 // catch 404 and forward to error handler

@@ -110,14 +110,13 @@ img{
     margin: auto;
     padding-left: 2em;
     padding-right: 2em;
-}
-.frame{
     resize: both;
     width: 100%;
     height: 40rem;
     border-style: solid;
     border-color: black;
     border-width: thin;
+    background-color: white;
 }
 
 div.overlay{

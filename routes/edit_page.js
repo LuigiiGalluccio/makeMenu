@@ -1,3 +1,7 @@
+var express = require('express');
+var router = express.Router();
+
+
 /** Function for A4 layout */
 function setLayoutA4(){
     let x = document.getElementById("myFrame");
@@ -146,7 +150,7 @@ function removeMode(remButton){
 function deleteFunc(element){
     if(element.tagName === "H1")
         element.nextElementSibling.remove();
-    element.remove();x
+    element.remove();
 }
 
 /** Show and Edit color picker for Color Text Section */
@@ -198,7 +202,7 @@ function showTitleColor(){
     colorPicker.click();
 }
 function changeColorTitle(picker){
-    let myFrame = document.getElementById("myFrame");
+    let myframe = document.getElementById("myFrame");
     let titleElement = myFrame.contentWindow.document.getElementById("titleMenu");
     titleElement.style.color = picker.value;
 }
@@ -219,12 +223,12 @@ function show(){
 }
 
 
-function openNav() {
+router.get(function openNav() {
     document.getElementById("mySidenav").style.width = "350px";
     document.getElementById("frameContainer").style.marginLeft = "350px";
     document.getElementById("export_tool").style.marginLeft = "350px";
 
-}
+});
 
 function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
@@ -232,4 +236,4 @@ function closeNav() {
     document.getElementById("export_tool").style.marginLeft = 0;
 }
 
-
+module.exports = router;
