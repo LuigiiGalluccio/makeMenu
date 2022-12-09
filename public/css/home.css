@@ -28,26 +28,18 @@ div.buttons{
     width: 30%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 6em;
+    margin-top: 3em;
 }
 
-div.buttons:hover{
-    transform: translateY(-15%);
-    transition-duration: 250ms;
-}
 
-div.buttons:not(hover){
-    transform: translateY(+15%);
-    transition-duration: 250ms;
-}
 
 .loginWith{
-    font-size: 2em;
-    color: #c00000;
+    font-size: 1.7em;
+    color: black;
     font-weight: bold;
 }
 .googleIcon {
-    width: 5em;
+    width: 13em;
 }
 
 
@@ -69,6 +61,7 @@ div.buttons:not(hover){
     background-color: #ffc000;
     transform: translateY(-10%);
     transition-duration: 200ms;
+
 }
 
 .button:not(:hover){
