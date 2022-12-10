@@ -1,6 +1,12 @@
-*{
-    font-family: "Eri Serif";
+@font-face{
+    font-family: myFont;
+    src: url("/public/Fonts/Eri-Serif.ttf");
 }
+
+*{
+    font-family: myFont;
+}
+
 body{
     background-color: white;
 }

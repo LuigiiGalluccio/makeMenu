@@ -1,6 +1,11 @@
 /* generic font */
+@font-face {
+    font-family: myFont;
+    src: url("../Fonts/Eri Light Serif.ttf");
+}
+
 *{
-    font-family: "Eri Light Serif";
+    font-family: myFont;
     font-size: 0.93em;
 }
 
@@ -32,7 +37,6 @@ div.buttons{
 }
 
 
-
 .loginWith{
     font-size: 1.7em;
     color: black;
@@ -41,7 +45,6 @@ div.buttons{
 .googleIcon {
     width: 13em;
 }
-
 
 .button{
     background-color: #c00000;
