@@ -12,6 +12,11 @@
             var overlay = document.getElementById('overlay');
             overlay.style.visibility = "visible";
         }
+
+        function changeImage(element){
+            element.setAttribute("src","/image/googleLogo2.svg");
+            element.style.borderRadius = "20px";
+        }
     </script>
 
 </head>
@@ -38,7 +43,7 @@
 
 <div class="buttons">
     <div class="loginWith">Login with</div>
-    <a href="/login/google" type="submit"><img class="googleIcon" src="/image/googleLogo.svg"></a>
+    <a href="/login/google" type="submit"><img class="googleIcon" src="/image/googleLogo.svg" onmouseover="changeImage(this)" onmouseout="this.setAttribute('src','/image/googleLogo.svg')"></a>
 </div>
 
 <div class="navbar">
