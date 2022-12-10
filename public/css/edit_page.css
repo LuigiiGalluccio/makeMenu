@@ -1,6 +1,16 @@
 /* generic font */
+@font-face {
+    font-family: myFont;
+    src: url("../Fonts/Eri Light Serif.ttf");
+}
+
+@font-face {
+    font-family: myFontLogo;
+    src: url("../Fonts/Batuphat Script.otf");
+}
+
 *{
-    font-family: "Eri Light Serif";
+    font-family: myFont;
     font-size: 0.93em;
     font-weight: bold;
 }
@@ -9,6 +19,7 @@
 body{
     background-image: url("../image/bg.png");
 }
+
 p.title_1{
     text-align: center;
     color: white;
@@ -57,6 +68,11 @@ input[type="color"]{
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: myFontLogo;
+}
+
+.logoImage{
+    font-family: myFontLogo;
 }
 
 img{

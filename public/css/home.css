@@ -4,6 +4,11 @@
     src: url("../Fonts/Eri Light Serif.ttf");
 }
 
+@font-face {
+    font-family: myFontLogo;
+    src: url("../Fonts/Batuphat Script.otf");
+}
+
 *{
     font-family: myFont;
     font-size: 0.93em;
@@ -23,6 +28,7 @@ img.logo {
     margin-bottom: 4em;
     display: flex;
 }
+
 
 /* Log Button Style */
 div.buttons{
