@@ -6,7 +6,9 @@
     <link rel="stylesheet" href="css/edit_page.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.0/html2pdf.bundle.min.js" integrity="sha512-w3u9q/DeneCSwUDjhiMNibTRh/1i/gScBVp2imNVAMCt6cUHIw6xzhzcPFIaL3Q1EbI2l+nu17q2aLJJLo4ZYg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
-        /** Function for A4 layoutt */
+        const url = require("url");
+
+        /** Function for A4 layout */
         function setLayoutA4(){
             let x = document.getElementById("frameContainer");
             x.style.height = "297mm";
@@ -228,7 +230,8 @@
             frameContainer.style.backgroundColor = picker.value;
         }
 
-        /** Burger Menu Style */
+
+        /*********** BURGER MENU  *************/
         function show(){
             var overlay = document.getElementById('overlay');
             overlay.style.visibility = "visible";
@@ -248,78 +251,100 @@
             document.getElementById("frameContainer").style.margin = "auto";
         }
 
+        /******** LOAD IMAGE FROM LOCAL FILES *********/
+        function previewFile(fileInput) {
+            var file = fileInput.files[0];
+            var reader = new FileReader();
+
+            reader.addEventListener("load", function() {
+                setBackground(reader.result);
+            }, false);
+
+            if (file) {
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function setBackground(imageURL){
+            let container = document.getElementById("frameContainer");
+            container.style.backgroundImage = "url(" + imageURL + ")";
+            container.style.backgroundSize = "100% 100%";
+            container.style.backgroundRepeat = "no-repeat";
+            container.style.backgroundPosition = "center";
+        }
+
     </script>
 </head>
 <body>
-    <div class="row">
-        <div class="col-12">
-            <!-- Export Tool menu -->
-            <div id="export_tool">
-                <button class="export" onclick="show()">How To</button>
-                <button class="export">Generate QR-Code</button>
-                <button id="exportPDF" class="export">Export in PDF</button>
-                <button class="export" onclick="openNav()">Edit your menu</button>
-            </div>
-        </div>
-
-            <div id="mySidenav" class="sidenav">
-                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                <div id="tool">
-                    <a href="../" class="linkHome"><img class="logoImage" src="image/logo.svg"></a>
-                    <button onclick="addSection()">Add Section</button>
-                    <button onclick="removeMode(this)">Remove Mode</button>
-                    <p class="title_1">Colors</p>
-                    <button onclick="showHeaderColor()">Section Color</button>
-                    <input type="color" id="colorPickerSection" onchange="changeColorSection(this)">
-                    <button onclick="showTitleColor()">Title Color</button>
-                    <input type="color" id="colorPickerTitle" onchange="changeColorTitle(this)">
-                    <button onclick="showTitleItemColor()">Item Title Color</button>
-                    <input type="color" id="colorPickerTitleItem" onchange="changeColorTitleItem(this)">
-                    <button onclick="showItemColor()">Item Color</button>
-                    <input type="color" id="colorPickerItem" onchange="changeColorItem(this)">
-                    <p class="title_1">Background</p>
-                    <button onclick="showBackgroundColor()">Background Solid Color</button>
-                    <input type="color" id="colorPickerBackground" onchange="changeBackgroundColor(this)">
-                    <input type="file" id="upload" accept="image/png, ,image/svg, image/jpg, image/jpeg, image/bmp" hidden="hidden">
-                    <label for="upload">Load background from file</label>
-                    <p class="title_1">Other Options</p>
-                    <button onclick="setLayoutA4()">Set Layout A4</button>
-                    <button onclick="setInitLayout()">Set Start Layout</button>
-                </div>
-            </div>
-          
-
-        <!-- Menu Frame Container -->
-        <div class="col-12">
-            <div id="frameContainer">
-                <h1 id="titleMenu" contenteditable="true" onblur="brandNameManager(this)">BRAND NAME</h1>
-            </div>
+<div class="row">
+    <div class="col-12">
+        <!-- Export Tool menu -->
+        <div id="export_tool">
+            <button class="export" onclick="show()">How To</button>
+            <button class="export">Generate QR-Code</button>
+            <button id="exportPDF" class="export">Export in PDF</button>
+            <button class="export" onclick="openNav()">Edit your menu</button>
         </div>
     </div>
 
-    <div class="overlay" id="overlay" onclick="document.getElementById('overlay').style= hidden">
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div id="tool">
+            <a href="../" class="linkHome"><img class="logoImage" src="image/logo.svg"></a>
+            <button onclick="addSection()">Add Section</button>
+            <button onclick="removeMode(this)">Remove Mode</button>
+            <p class="title_1">Colors</p>
+            <button onclick="showHeaderColor()">Section Color</button>
+            <input type="color" id="colorPickerSection" onchange="changeColorSection(this)">
+            <button onclick="showTitleColor()">Title Color</button>
+            <input type="color" id="colorPickerTitle" onchange="changeColorTitle(this)">
+            <button onclick="showTitleItemColor()">Item Title Color</button>
+            <input type="color" id="colorPickerTitleItem" onchange="changeColorTitleItem(this)">
+            <button onclick="showItemColor()">Item Color</button>
+            <input type="color" id="colorPickerItem" onchange="changeColorItem(this)">
+            <p class="title_1">Background</p>
+            <button onclick="showBackgroundColor()">Background Solid Color</button>
+            <input type="color" id="colorPickerBackground" onchange="changeBackgroundColor(this)">
+            <input type="file" id="upload" onchange="previewFile(this);" accept="image/png, ,image/svg, image/jpg, image/jpeg, image/bmp" hidden="hidden" >
+            <label for="upload">Load background from file</label>
+            <p class="title_1">Other Options</p>
+            <button onclick="setLayoutA4()">Set Layout A4</button>
+            <button onclick="setInitLayout()">Set Start Layout</button>
+        </div>
+    </div>
+
+
+    <!-- Menu Frame Container -->
+    <div class="col-12">
+        <div id="frameContainer">
+            <h1 id="titleMenu" contenteditable="true" onblur="brandNameManager(this)">BRAND NAME</h1>
+        </div>
+    </div>
+</div>
+
+<div class="overlay" id="overlay" onclick="document.getElementById('overlay').style= hidden">
         <span>
             <p class = "overlayTitle">Edit Elements</p>
             <p class = "overlayDescription">Click on the elements to Edit them</p>
         </span>
 
-        <span>
+    <span>
             <p class = "overlayTitle">Add Description</p>
             <p class = "overlayDescription">Double Click on the Title to add Description to the item</p>
         </span>
 
-        <span>
+    <span>
             <p class = "overlayTitle">Edit page size display</p>
             <p class = "overlayDescription">We can Change the page size display</p>
         </span>
 
-        <span>
+    <span>
             <p class = "overlayTitle">Add item to Section</p>
             <p class = "overlayDescription">Double Click on Section to add Item</p>
         </span>
-            <p class="click">Click anywhere to go back</p>
-            <img src="image/logo2.svg" class="logo2" alt="logo">
-    </div>
+    <p class="click">Click anywhere to go back</p>
+    <img src="image/logo2.svg" class="logo2" alt="logo">
+</div>
 
 </body>
 </html>
