@@ -127,14 +127,15 @@ img{
     margin: auto;
     padding-left: 2em;
     padding-right: 2em;
-    resize: both;
     width: 70%;
+    overflow: scroll;
     height: 80rem;
     border-style: solid;
     border-color: black;
     border-width: thin;
     background-color: white;
     font-size: 30px;
+    resize: both;
 }
 #titleMenu{
     text-align: center;

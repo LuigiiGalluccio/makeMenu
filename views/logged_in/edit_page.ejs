@@ -21,11 +21,10 @@
         }
 
         /** Function to catch empty Brand Name */
-        function  brandNameManager(element){
-            if(element.innerHTML == "")
-                element.innerHTML = "Brand Name";
+        function brandNameManager(element){
+            if(element.innerHTML.length === 0)
+                element.innerHTML = "BRAND NAME"
         }
-
 
         /** Add Section Function */
         function addSection(){
@@ -240,6 +239,7 @@
             document.getElementById("mySidenav").style.width = "350px";
             document.getElementById("frameContainer").style.marginLeft = "350px";
             document.getElementById("export_tool").style.marginLeft = "350px";
+
         }
 
         function closeNav() {
