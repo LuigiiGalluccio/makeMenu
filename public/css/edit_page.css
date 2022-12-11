@@ -4,11 +4,6 @@
     src: url("../Fonts/Eri Light Serif.ttf");
 }
 
-@font-face {
-    font-family: myFontLogo;
-    src: url("../Fonts/Batuphat Script.otf");
-}
-
 *{
     font-family: myFont;
     font-size: 0.93em;
@@ -93,6 +88,7 @@ img{
     background-color: #c00000;
     font-size: 1em;
     color: white;
+    font-size: 1rem;
     padding: 2em 4em;
     border-radius: 20px;
     border-style: none;
@@ -121,20 +117,41 @@ img{
     border-radius: 20px;
     border-style: none;
 }
+
 /* frame style */
 #frameContainer{
     margin: auto;
     padding-left: 2em;
     padding-right: 2em;
     resize: both;
-    width: 100%;
+    width: 70%;
     height: 80rem;
     border-style: solid;
     border-color: black;
     border-width: thin;
     background-color: white;
-    resize: vertical;
+    font-size: 30px;
 }
+#titleMenu{
+    text-align: center;
+    font-size: 40px;
+}
+
+table{
+    margin: auto;
+    width: 100%;
+}
+td{
+    border-style: solid;
+    border-radius: 10px;
+    border-color: gray;
+    border-width: 2px;
+}
+td.itemDescription{ font-style: italic; text-align: center }
+td.itemDescription::before{ content: "("; }
+td.itemDescription::after{ content: ")"; }
+td.itemPrice::after{ content: "€"; }
+td.itemPrice{ text-align: right }
 
 div.overlay{
     position: fixed;
@@ -190,11 +207,10 @@ p.overlayTitle{
 }
 
 img.logo2{
-    width: 15%;
+    width: 30em;
     bottom: 5px;
     margin: auto;
     margin-bottom: 30px;
-
 }
 
 p.click{
@@ -206,6 +222,8 @@ p.click{
     margin-top: 30px;
 }
 
+
+/* Grid Layout for responsive */
 *{ box-sizing: border-box; }
 
 /* definizione colonne */
@@ -254,7 +272,6 @@ p.click{
 /* SideNav */
 
 .sidenav {
-
     height: 100%;
     width: 0;
     position: fixed;
@@ -265,8 +282,7 @@ p.click{
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
-
-  }
+}
 
 .sidenav a {
     padding: 8px 8px 8px 32px;

@@ -13,16 +13,29 @@
             x.style.width = "210mm";
         }
 
+        /** Function for default layout */
+        function setInitLayout(){
+            let container = document.getElementById("frameContainer")
+            container.style.width = "70%";
+            container.style.height = "80em";
+        }
+
+        /** Function to catch empty Brand Name */
+        function  brandNameManager(element){
+            if(element.innerHTML == "")
+                element.innerHTML = "Brand Name";
+        }
+
+
         /** Add Section Function */
         function addSection(){
             let frameContainer = document.getElementById('frameContainer');
-            let containerMenu = frameContainer.contentWindow.document.querySelector("#Container");
             let newElement = newSectionTitle();
             let newTable = newTableSection(newElement);
 
             //Add new element at main container
-            containerMenu.appendChild(newElement);
-            containerMenu.appendChild(newTable);
+            frameContainer.appendChild(newElement);
+            frameContainer.appendChild(newTable);
         }
 
         /** Function for apply attribute to element */
@@ -45,29 +58,29 @@
         /** Add Section Title */
         function newSectionTitle(){
             let newElement = document.createElement("h1");
-            setElementProperties(newElement );
+            setElementProperties(newElement);
 
             newElement.innerHTML = "New Section";
             newElement.style.color = document.getElementById("colorPickerSection").value;
-
+            newElement.id = newElement.innerHTML;
 
             newElement.onblur = function (){
                 if(this.innerHTML === "")
                     this.innerHTML = "<p title='WARNING: Insert name of section!' style='display: inline; background-color: red'>Empty Section " + "&#128721" + "</p>";
                 this.setAttribute("id",newElement.innerHTML);
-                frameContainer.contentWindow.document.querySelector(this.nextSibling.setAttribute("id",newElement.innerHTML + "T"));
+                this.nextSibling.id = this.id + "T";
             };
 
             newElement.ondblclick = function (){
-                let tableOfSection = frameContainer.contentWindow.document.getElementById(this.id + "T");
+                let tableOfSection = document.getElementById(this.id + "T");
                 addItemToTable(tableOfSection);
             }
-
             return newElement;
         }
         /** Create New Table Section Function */
-        function newTableSection(){
+        function newTableSection(newElement){
             let newTable = document.createElement("table");
+            newTable.id = newElement.id + "T";
             addItemToTable(newTable);
             return newTable;
         }
@@ -110,8 +123,8 @@
         /** Remove Mode Element */
         function removeMode(remButton){
             let toolButtons = document.getElementById('tool').querySelectorAll("button");
-            let sections = document.getElementById("frameContainer").contentWindow.document.querySelectorAll("h1");
-            let allRow = document.getElementById("frameContainer").contentWindow.document.querySelectorAll("tr");
+            let sections = document.querySelectorAll("h1");
+            let allRow = document.querySelectorAll("tr");
 
             if(remButton.innerHTML === "Remove Mode") {
                 toolButtons.forEach(button => {
@@ -154,7 +167,7 @@
         function deleteFunc(element){
             if(element.tagName === "H1")
                 element.nextElementSibling.remove();
-            element.remove();x
+            element.remove();
         }
 
         /** Show and Edit color picker for Color Text Section */
@@ -163,8 +176,7 @@
             colorPicker.click();
         }
         function changeColorSection(picker){
-            let frameContainer = document.getElementById("frameContainer");
-            let sectionsElement = frameContainer.contentWindow.document.querySelectorAll("h1");
+            let sectionsElement = document.querySelectorAll("h1");
             sectionsElement.forEach(element =>{
                 if(element.id != "titleMenu")
                     element.style.color = picker.value;
@@ -177,8 +189,7 @@
             colorPicker.click();
         }
         function changeColorItem(picker){
-            let frameContainer = document.getElementById("frameContainer");
-            let items = frameContainer.contentWindow.document.querySelectorAll("td");
+            let items = document.querySelectorAll("td");
             items.forEach(item =>{
                 if(!item.attributes.getNamedItem("class").value.includes("itemTitle"))
                     item.style.color = picker.value;
@@ -191,12 +202,10 @@
             colorPicker.click();
         }
         function changeColorTitleItem(picker){
-            let frameContainer = document.getElementById("frameContainer");
-            let items = frameContainer.contentWindow.document.querySelectorAll("td");
+            let items = document.querySelectorAll("td");
             items.forEach(item =>{
                 if(item.attributes.getNamedItem("class").value.includes("itemTitle"))
                     item.style.color = picker.value;
-                item.style.borderColor = "gray";
             });
         }
 
@@ -206,8 +215,7 @@
             colorPicker.click();
         }
         function changeColorTitle(picker){
-            let frameContainer = document.getElementById("frameContainer");
-            let titleElement = frameContainer.contentWindow.document.getElementById("titleMenu");
+            let titleElement = document.getElementById("titleMenu");
             titleElement.style.color = picker.value;
         }
 
@@ -218,9 +226,10 @@
         }
         function changeBackgroundColor(picker){
             let frameContainer = document.getElementById("frameContainer");
-            frameContainer.contentWindow.document.body.style.backgroundColor = picker.value
+            frameContainer.style.backgroundColor = picker.value;
         }
 
+        /** Burger Menu Style */
         function show(){
             var overlay = document.getElementById('overlay');
             overlay.style.visibility = "visible";
@@ -231,13 +240,12 @@
             document.getElementById("mySidenav").style.width = "350px";
             document.getElementById("frameContainer").style.marginLeft = "350px";
             document.getElementById("export_tool").style.marginLeft = "350px";
-
         }
 
         function closeNav() {
             document.getElementById("mySidenav").style.width = "0";
-            document.getElementById("frameContainer").style.marginLeft = 0;
-            document.getElementById("export_tool").style.marginLeft = 0;
+            document.getElementById("export_tool").style.marginLeft = "0";
+            document.getElementById("frameContainer").style.margin = "auto";
         }
 
     </script>
@@ -282,6 +290,7 @@
         <!-- Menu Frame Container -->
         <div class="col-12">
             <div id="frameContainer">
+                <h1 id="titleMenu" contenteditable="true" onblur="brandNameManager(this)">BRAND NAME</h1>
             </div>
         </div>
     </div>

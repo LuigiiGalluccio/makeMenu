@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
-
 <svg
    width="145.17708mm"
    height="24.743746mm"
@@ -402,8 +401,9 @@
         </g>
       </g>
       <text
+
          fill="#c00000"
-         font-family="'Batuphat Script', 'Batuphat Script_MSFontService', sans-serif"
+         font-family = "'Batuphat Script', 'Batuphat Script_MSFontService', sans-serif"
          font-weight="400"
          font-size="91px"
          transform="translate(375.606,184)"
@@ -425,7 +425,7 @@
       </g>
       <text
          fill="#ffc000"
-         font-family="'Batuphat Script', 'Batuphat Script_MSFontService', sans-serif"
+         font-family= "'Batuphat Script', 'Batuphat Script_MSFontService', sans-serif"
          font-weight="400"
          font-size="91px"
          transform="translate(596.606,184)"
