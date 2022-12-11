@@ -22,6 +22,7 @@ img.logo {
     margin-right: auto;
     margin-bottom: 4em;
     display: flex;
+
 }
 
 
@@ -36,7 +37,6 @@ div.buttons{
     margin-right: auto;
     margin-top: 3em;
 }
-
 
 .loginWith{
     font-size: 1.7em;
