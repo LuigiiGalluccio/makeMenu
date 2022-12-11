@@ -6,7 +6,9 @@
     <link rel="stylesheet" href="css/edit_page.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.0/html2pdf.bundle.min.js" integrity="sha512-w3u9q/DeneCSwUDjhiMNibTRh/1i/gScBVp2imNVAMCt6cUHIw6xzhzcPFIaL3Q1EbI2l+nu17q2aLJJLo4ZYg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
-        /** Function for A4 layoutt */
+        const url = require("url");
+
+        /** Function for A4 layout */
         function setLayoutA4(){
             let x = document.getElementById("frameContainer");
             x.style.height = "297mm";
@@ -228,7 +230,8 @@
             frameContainer.style.backgroundColor = picker.value;
         }
 
-        /** Burger Menu Style */
+
+        /*********** BURGER MENU  *************/
         function show(){
             var overlay = document.getElementById('overlay');
             overlay.style.visibility = "visible";
@@ -246,6 +249,28 @@
             document.getElementById("mySidenav").style.width = "0";
             document.getElementById("export_tool").style.marginLeft = "0";
             document.getElementById("frameContainer").style.margin = "auto";
+        }
+
+        /******** LOAD IMAGE FROM LOCAL FILES *********/
+        function previewFile(fileInput) {
+            var file = fileInput.files[0];
+            var reader = new FileReader();
+
+            reader.addEventListener("load", function() {
+                setBackground(reader.result);
+            }, false);
+
+            if (file) {
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function setBackground(imageURL){
+            let container = document.getElementById("frameContainer");
+            container.style.backgroundImage = "url(" + imageURL + ")";
+            container.style.backgroundSize = "100% 100%";
+            container.style.backgroundRepeat = "no-repeat";
+            container.style.backgroundPosition = "center";
         }
 
     </script>
@@ -280,7 +305,7 @@
                     <p class="title_1">Background</p>
                     <button onclick="showBackgroundColor()">Background Solid Color</button>
                     <input type="color" id="colorPickerBackground" onchange="changeBackgroundColor(this)">
-                    <input type="file" id="upload" accept="image/png, ,image/svg, image/jpg, image/jpeg, image/bmp" hidden="hidden">
+                    <input type="file" id="upload" onchange="previewFile(this);" accept="image/png, ,image/svg, image/jpg, image/jpeg, image/bmp" hidden="hidden" >
                     <label for="upload">Load background from file</label>
                     <p class="title_1">Other Options</p>
                     <button onclick="setLayoutA4()">Set Layout A4</button>
