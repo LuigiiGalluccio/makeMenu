@@ -49,10 +49,10 @@ p.title_1{
     text-align: center;
 }
 
-
-#tool > button:hover {
+#tool > button:hover,label:hover {
     color: #ffc000;
 }
+
 input[type="color"]{
     background-color: #4b4b4b;
     width: 10em;
