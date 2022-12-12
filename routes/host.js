@@ -2,14 +2,12 @@ var express = require('express');
 var router = express.Router();
 var Account = require('../models/Account');
 
-/* GET home page. */
-router.get('/host.html', async function (req, res, next) {
-    var id = req.get('id');
-    var user = await Account.findById(id);
-    if(user){
-        document.body.innerHTML = user.get('menu_saved');
-    }
-    res.render('host', {title: 'Express'});
+
+router.get('/:orderId([0-9a-fA-F]{24})', async function (req, res, next) {
+    var id = req.params.orderId;
+    var menu = await Account.findById(id);
+    res.render('host',{menu});
 });
 
 module.exports = router;
+

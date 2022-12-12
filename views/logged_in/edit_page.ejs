@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="css/edit_page.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.0/html2pdf.bundle.min.js" integrity="sha512-w3u9q/DeneCSwUDjhiMNibTRh/1i/gScBVp2imNVAMCt6cUHIw6xzhzcPFIaL3Q1EbI2l+nu17q2aLJJLo4ZYg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
+
         const url = require("url");
 
         /** Function for A4 layout */
@@ -273,6 +274,16 @@
             container.style.backgroundPosition = "center";
         }
 
+        function save(){
+            var container = document.querySelector("#divContainer").innerHTML;
+            console.log(container);
+            var xr = new XMLHttpRequest();
+            xr.open("POST","/account");
+            xr.setRequestHeader("Accept","Application/json");
+            xr.setRequestHeader("Content-Type","Application/json");
+            xr.send(JSON.stringify({container:container}));
+        }
+
     </script>
 </head>
 <body>
@@ -280,6 +291,7 @@
     <div class="col-12">
         <!-- Export Tool menu -->
         <div id="export_tool">
+            <button id="exportPDF" class="export" onclick="save()">Save</button>
             <button class="export" onclick="show()">How To</button>
             <button class="export">Generate QR-Code</button>
             <button id="exportPDF" class="export">Export in PDF</button>
@@ -315,10 +327,12 @@
 
 
     <!-- Menu Frame Container -->
-    <div class="col-12">
-        <div id="frameContainer">
-            <h1 id="titleMenu" contenteditable="true" onblur="brandNameManager(this)">BRAND NAME</h1>
-        </div>
+    <div class="col-12" id="divContainer">
+        <%if(user.menu_saved!==null && user.menu_saved!==""){%>
+        <%-user.menu_saved%>
+        <%}else{%>
+            <div id="frameContainer"></div>
+        <%}%>
     </div>
 </div>
 

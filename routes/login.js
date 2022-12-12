@@ -35,7 +35,7 @@ passport.use(new GoogleStrategy({
         cb(null,user);
     }));
 
-passport.serializeUser((user,done) => { done(null,user._id)});
+passport.serializeUser((user,done) => {done(null,user._id)});
 passport.deserializeUser((userId,done) => { done(null,userId)});
 
 /* GET Login page. */
