@@ -283,6 +283,7 @@
             xr.setRequestHeader("Accept","Application/json");
             xr.setRequestHeader("Content-Type","Application/json");
             xr.send(JSON.stringify({container:container}));
+            alert("Menu saved correctly!");
         }
 
     </script>
@@ -292,10 +293,10 @@
     <div class="col-12">
         <!-- Export Tool menu -->
         <div id="export_tool">
-            <button id="exportPDF" class="export" onclick="save()">Save</button>
             <button class="export" onclick="show()">How To</button>
             <button class="export">Generate QR-Code</button>
             <button id="exportPDF" class="export">Export in PDF</button>
+            <button id="exportPDF" class="export" onclick="save()">Save</button>
             <button class="export" onclick="openNav()">Edit your menu</button>
         </div>
     </div>

@@ -24,7 +24,6 @@ var AccountSchema = new mongoose.Schema({
     menu_saved:{
         type: String,
         default: "",
-
     },
 });
 

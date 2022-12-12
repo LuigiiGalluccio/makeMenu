@@ -7,9 +7,19 @@
     <link rel="stylesheet" href="/css/edit_page.css">
     <title>Document</title>
 
+    <script>
+        function loadMenuHost(){
+            let elemento = document.getElementById("frameContainer");
+            elemento.style.width = "100%";
+            elemento.style.height = "100%";
+            elemento.style.margin = "auto";
+            elemento.style.resize = "none";
+            elemento.style.overflow = "auto";
+        }
+    </script>
 
 </head>
-<body>
-<%- menu.menu_saved %>
+<body onload="loadMenuHost()">
+    <%- menu.menu_saved %>
 </body>
 </html>
