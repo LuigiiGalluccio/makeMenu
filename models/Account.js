@@ -44,6 +44,10 @@ var AccountSchema = new mongoose.Schema({
 
         }],
     },
+    menu_saved:{
+        type: String,
+    }
 });
+
 
 module.exports = mongoose.model('Account',AccountSchema);
