@@ -274,6 +274,7 @@
             container.style.backgroundPosition = "center";
         }
 
+
         function save(){
             var container = document.querySelector("#divContainer").innerHTML;
             console.log(container);
@@ -331,7 +332,7 @@
         <%if(user.menu_saved!==null && user.menu_saved!==""){%>
         <%-user.menu_saved%>
         <%}else{%>
-            <div id="frameContainer"></div>
+            <div id="frameContainer"><h1>TITOLO</h1></div>
         <%}%>
     </div>
 </div>
@@ -359,6 +360,14 @@
     <p class="click">Click anywhere to go back</p>
     <img src="image/logo2.svg" class="logo2" alt="logo">
 </div>
+
+<script>
+    <%if(user.menu_image!==null){%>
+        setBackground('data:image/jpeg;base64,' + btoa(<%=user.menu_image%>>));
+    <%}%>
+
+</script>
+
 
 </body>
 </html>
