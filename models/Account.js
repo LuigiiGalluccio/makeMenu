@@ -23,9 +23,7 @@ var AccountSchema = new mongoose.Schema({
     },
     menu_saved:{
         type: String,
-    },
-    menu_image:{
-        type: Buffer,
+        default: "",
     },
 });
 
