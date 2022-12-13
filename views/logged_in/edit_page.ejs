@@ -231,7 +231,6 @@
             frameContainer.style.backgroundColor = picker.value;
         }
 
-
         /*********** BURGER MENU  *************/
         function show(){
             var overlay = document.getElementById('overlay');
@@ -296,7 +295,7 @@
     <div class="col-12">
         <!-- Export Tool menu -->
         <div id="export_tool">
-            <button class="export" onclick="show()">How To</button>
+            <button class="export" onclick="show()">Help</button>
             <button id="QRcode" class="export" onclick="window.location.assign('http://localhost:3000/host/' + userID + '/qrcode')">Generate QR-Code</button>
             <button id="exportPDF" class="export" onclick="save()">Save</button>
             <button id="exportPDF" class="export" onclick="show2()">Show link</button>
@@ -325,7 +324,7 @@
             <p class="title_1">Other Options</p>
             <button onclick="setLayoutA4()">Set Layout A4</button>
             <button onclick="setInitLayout()">Set Start Layout</button>
-            <button onclick="resetAll()">Clear menu</button>
+            <button onclick="resetAll()">Erase All</button>
         </div>
     </div>
 
