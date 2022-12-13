@@ -18,6 +18,8 @@ router.get('/', async function(req, res, next) {
         res.redirect('/login?failed=false');
 });
 
+
+
 /* GET Logout. */
 router.get('/logout', function(req, res, next) {
     req.logout(function(err) {
@@ -34,8 +36,7 @@ router.post('/', async function (req, res, next){
     var menu = req.body.container;
     var id = req.session.passport.user;
     await Account.findByIdAndUpdate(id,{menu_saved:menu});
-
-
+    res.send(id);
 });
 
 

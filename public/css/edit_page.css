@@ -176,6 +176,32 @@ div.overlay{
     visibility: hidden;
     opacity: 0.9;
     cursor: pointer;
+
+}
+
+
+div.overlay2{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2em;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    width:50%;
+    height:50%;
+    margin: auto;
+    background-color: black;
+    color: white;
+    visibility: hidden;
+    opacity: 0.9;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1.5em;
+
 }
 
 p.overlayDescription{

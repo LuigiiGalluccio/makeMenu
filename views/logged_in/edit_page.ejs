@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>makeMenu</title>
     <link rel="stylesheet" href="css/edit_page.css">
+    <script src="public/qrcode.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.0/html2pdf.bundle.min.js" integrity="sha512-w3u9q/DeneCSwUDjhiMNibTRh/1i/gScBVp2imNVAMCt6cUHIw6xzhzcPFIaL3Q1EbI2l+nu17q2aLJJLo4ZYg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
 
@@ -236,6 +237,11 @@
             overlay.style.visibility = "visible";
         }
 
+        function show2(){
+            var overlay2 = document.getElementById('overlay2');
+            overlay2.style.visibility = "visible";
+        }
+
 
         function openNav() {
             document.getElementById("mySidenav").style.width = "350px";
@@ -273,6 +279,8 @@
         }
 
 
+        var userID;
+
         function save(){
             var container = document.querySelector("#divContainer").innerHTML;
             console.log(container);
@@ -280,9 +288,18 @@
             xr.open("POST","/account");
             xr.setRequestHeader("Accept","Application/json");
             xr.setRequestHeader("Content-Type","Application/json");
+
+            xr.onreadystatechange = function() {//Call a function when the state changes.
+                if(xr.readyState == 4 && xr.status == 200) {
+                    alert("Menu saved correctly!");
+                    userID = xr.responseText;
+                    document.getElementById("overlay2").innerHTML = "http://localhost:3000/host/" + userID;
+                }
+            }
             xr.send(JSON.stringify({container:container}));
-            alert("Menu saved correctly!");
         }
+
+
 
     </script>
 </head>
@@ -292,9 +309,10 @@
         <!-- Export Tool menu -->
         <div id="export_tool">
             <button class="export" onclick="show()">How To</button>
-            <button class="export">Generate QR-Code</button>
+            <button id="QRcode" class="export">Generate QR-Code</button>
             <button id="exportPDF" class="export">Export in PDF</button>
             <button id="exportPDF" class="export" onclick="save()">Save</button>
+            <button id="exportPDF" class="export" onclick="show2()">Show link</button>
             <button class="export" onclick="openNav()">Edit your menu</button>
         </div>
     </div>
@@ -359,6 +377,12 @@
         </span>
     <p class="click">Click anywhere to go back</p>
     <img src="image/logo2.svg" class="logo2" alt="logo">
+</div>
+
+
+<div class="overlay2" id="overlay2" onclick="document.getElementById('overlay2').style= hidden">
+    <div id="qrcode"></div>
+
 </div>
 
 <script>
