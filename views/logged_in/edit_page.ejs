@@ -246,8 +246,10 @@
         function overlay2manager(overlay){
             let textToCopy = document.querySelector("#qrIP");
             if(textToCopy.attributes[2].value !== "To show the link, first click on the save button !"){
+                textToCopy.attributes.removeNamedItem("disabled");
                 textToCopy.select();
                 document.execCommand('copy');
+                textToCopy.setAttribute("disabled","true");
                 alert("The link has been copied, paste it wherever you want !");
             }
             overlay.style = "hidden";
@@ -364,7 +366,7 @@
 
 
 <div class="overlay2" id="overlay2" onclick="overlay2manager(this)">
-    <input type="text" id="qrIP" value="To show the link, first click on the save button !">
+    <input type="text" id="qrIP" value="To show the link, first click on the save button !" disabled="true">
     <p id="ipMSG"></p>
 </div>
 
