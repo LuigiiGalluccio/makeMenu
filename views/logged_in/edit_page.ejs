@@ -256,28 +256,6 @@
             document.getElementById("frameContainer").style.margin = "auto";
         }
 
-        /******** LOAD IMAGE FROM LOCAL FILES *********/
-        function previewFile(fileInput) {
-            var file = fileInput.files[0];
-            var reader = new FileReader();
-
-            reader.addEventListener("load", function() {
-                setBackground(reader.result);
-            }, false);
-
-            if (file) {
-                reader.readAsDataURL(file);
-            }
-        }
-
-        function setBackground(imageURL){
-            let container = document.getElementById("frameContainer");
-            container.style.backgroundImage = "url(" + imageURL + ")";
-            container.style.backgroundSize = "100% 100%";
-            container.style.backgroundRepeat = "no-repeat";
-            container.style.backgroundPosition = "center";
-        }
-
 
         var userID;
 
@@ -332,8 +310,6 @@
             <p class="title_1">Background</p>
             <button onclick="showBackgroundColor()">Background Solid Color</button>
             <input type="color" id="colorPickerBackground" onchange="changeBackgroundColor(this)">
-            <input type="file" id="upload" onchange="previewFile(this);" accept="image/png, ,image/svg, image/jpg, image/jpeg, image/bmp" hidden="hidden" >
-            <label for="upload">Load background from file</label>
             <p class="title_1">Other Options</p>
             <button onclick="setLayoutA4()">Set Layout A4</button>
             <button onclick="setInitLayout()">Set Start Layout</button>
