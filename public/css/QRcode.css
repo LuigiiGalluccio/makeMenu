@@ -1,0 +1,49 @@
+@font-face {
+    font-family: myFont;
+    src: url("../Fonts/Eri Light Serif.ttf");
+}
+
+*{
+    font-family: myFont;
+    font-size: 0.93em;
+    font-weight: bold;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+.logoQR{
+    margin: auto;
+    width: 70mm;
+    height: 30mm;
+}
+
+.qrcode{
+    margin: auto;
+    width: 60mm;
+    height: 60mm;
+}
+
+button {
+
+    margin: auto;
+    background-color: #c00000;
+    font-size: 1em;
+    color: white;
+    font-size: 1rem;
+    padding: 1.5em 3em;
+    border-radius: 30px;
+    border-style: none;
+}
+
+button:hover{
+    color: #c00000;
+    box-shadow:0px 0px 20px #c00000;
+    font-weight: bold;
+    border-color: #c00000;
+    background-color: white;
+}
