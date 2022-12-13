@@ -165,6 +165,7 @@
                 else{
                     x.style.color = "black";
                     x.innerHTML = "BRAND NAME";
+                    x.setAttribute("contenteditable","true");
                 }
             })
             tab.forEach(x =>{ x.remove(); })
@@ -270,7 +271,7 @@
                 if(xr.readyState == 4 && xr.status == 200) {
                     alert("Menu saved correctly!");
                     userID = xr.responseText;
-                    document.getElementById("overlay2").innerHTML = "http://localhost:3000/host/" + userID;
+                    document.getElementById("overlay2").innerHTML = "http://192.168.1.41:3000/host/" + userID;
                 }
             }
             xr.send(JSON.stringify({container:container}));
@@ -284,7 +285,7 @@
         <!-- Export Tool menu -->
         <div id="export_tool">
             <button class="export" onclick="show()">How To</button>
-            <button id="QRcode" class="export" onclick="window.location.replace('http://localhost:3000/host/' + userID + '/qrcode')">Generate QR-Code</button>
+            <button id="QRcode" class="export" onclick="window.location.assign('http://localhost:3000/host/' + userID + '/qrcode')">Generate QR-Code</button>
             <button id="exportPDF" class="export" onclick="save()">Save</button>
             <button id="exportPDF" class="export" onclick="show2()">Show link</button>
             <button class="export" onclick="openNav()">Edit your menu</button>
