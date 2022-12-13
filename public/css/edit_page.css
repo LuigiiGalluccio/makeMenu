@@ -134,7 +134,7 @@ img{
     border-color: black;
     border-width: thin;
     background-color: white;
-    font-size: 15px;
+        font-size: 15px;
     resize: both;
 }
 #titleMenu{
@@ -202,7 +202,17 @@ div.overlay2{
     text-align: center;
     font-size: 1.5em;
     border-radius: 10em;
+}
 
+#qrIP{
+    text-align: center;
+    background-color: transparent;
+    color: white;
+    border-style: none;
+}
+
+#ipMSG{
+    color: #ffc000;
 }
 
 p.overlayDescription{

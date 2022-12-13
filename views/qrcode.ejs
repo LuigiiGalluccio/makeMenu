@@ -3,12 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../../css/QRcode.css">
+    <script>
+        function duplicate(){
+            let source = document.querySelector(".qrcode");
+            let newQR = document.createElement("img");
+            newQR.setAttribute("class","qrcodeCopy");
+            newQR.setAttribute("src",source.attributes[1].value);
+            document.querySelector("#qrContainer").appendChild(newQR)
+        }
+        function remove(){
+            let container = document.querySelector("#qrContainer");
+            if(container.lastChild.attributes[0].value === "qrcodeCopy")
+                container.lastChild.remove();
+        }
+        function printDiv() {
+            let hr = document.querySelectorAll("hr");
+            hr.forEach(x =>{
+                x.style.display = "none";
+            })
+            document.querySelector("#printButton").style.visibility = "hidden";
+            document.querySelector(".msg").style.visibility = "hidden";
+            document.querySelector("#remButton").style.visibility = "hidden";
+            document.querySelector("#addButton").style.visibility = "hidden";
+            window.print();
+            hr.forEach(x =>{
+                x.style.display = "block";
+            })
+            document.querySelector("#printButton").style.visibility = "visible";
+            document.querySelector("#remButton").style.visibility = "visible";
+            document.querySelector(".msg").style.visibility = "visible";
+            document.querySelector("#addButton").style.visibility = "visible";
+        }
+    </script>
     <title>QRcode</title>
 </head>
 <body>
-        <img class="logoQR" src="../../image/logo.svg">
-        <img class="qrcode" src="<%= qrcode %>">
+        <div class="mainContainer">
+            <img class="logoQR" src="../../image/logo.svg">
+            <hr>
 
-        <button onclick="printDiv()">STAMPA</button>
+            <p class="msg">Use the buttons below to choose the QRCODE number to print!</p>
+            <div class="buttonContainer">
+                <button onclick="remove()" id="remButton">-</button>
+                <button onclick="printDiv()" id="printButton">PRINT</button>
+                <button onclick="duplicate()" id="addButton">+</button>
+            </div>
+            <hr>
+
+            <div id="qrContainer">
+                <img class="qrcode" src="<%= qrcode %>">
+            </div>
+        </div>
+
 </body>
 </html>

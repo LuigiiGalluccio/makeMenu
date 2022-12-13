@@ -243,6 +243,15 @@
             overlay2.style.visibility = "visible";
         }
 
+        function overlay2manager(overlay){
+            let textToCopy = document.querySelector("#qrIP");
+            if(textToCopy.attributes[2].value !== "To show the link, first click on the save button !"){
+                textToCopy.select();
+                document.execCommand('copy');
+                alert("The link has been copied, paste it wherever you want !");
+            }
+            overlay.style = "hidden";
+        }
 
         function openNav() {
             document.getElementById("mySidenav").style.width = "350px";
@@ -271,7 +280,8 @@
                 if(xr.readyState == 4 && xr.status == 200) {
                     alert("Menu saved correctly!");
                     userID = xr.responseText;
-                    document.getElementById("overlay2").innerHTML = "http://192.168.1.41:3000/host/" + userID;
+                    document.querySelector("#qrIP").setAttribute("value","http://192.168.1.41:3000/host/" + userID);
+                    document.getElementById("ipMSG").innerHTML = "Click on this black container to copy the link to the clipboard and close this message !"
                 }
             }
             xr.send(JSON.stringify({container:container}));
@@ -353,18 +363,17 @@
 </div>
 
 
-<div class="overlay2" id="overlay2" onclick="document.getElementById('overlay2').style= hidden">
-    <div id="qrcode"></div>
-
+<div class="overlay2" id="overlay2" onclick="overlay2manager(this)">
+    <input type="text" id="qrIP" value="To show the link, first click on the save button !">
+    <p id="ipMSG"></p>
 </div>
 
 <script>
     <%if(user.menu_image!==null){%>
         setBackground('data:image/jpeg;base64,' + btoa(<%=user.menu_image%>>));
     <%}%>
-
 </script>
-
 
 </body>
 </html>
+

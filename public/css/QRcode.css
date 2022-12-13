@@ -9,35 +9,63 @@
     font-weight: bold;
 }
 
-body{
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    flex-direction: column;
-}
-
 .logoQR{
     margin: auto;
-    width: 70mm;
-    height: 30mm;
+    width: 60%;
+    height: 30%;
+    margin-bottom: 5em;
 }
 
-.qrcode{
+img[class*="qrcode"]{
     margin: auto;
     width: 60mm;
     height: 60mm;
 }
 
-button {
+.mainContainer{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-evenly;
+}
 
+#qrContainer{
+    margin: auto;
+}
+
+.buttonContainer{
+    margin: auto;
+    padding: 2em;
+}
+
+.msg{
+    font-family: myFont;
+    text-align: center;
+    font-size: 21px;
+}
+
+hr{
+    width: 100%;
+}
+
+button {
     margin: auto;
     background-color: #c00000;
     font-size: 1em;
     color: white;
     font-size: 1rem;
-    padding: 1.5em 3em;
+    padding: 1em 2em;
     border-radius: 30px;
     border-style: none;
+}
+
+#printButton{
+    background-color: #ffc000;
+    color: black;
+}
+#remButton, #addButton{
+    font-weight: bold;
+    font-size: 1.5em;
 }
 
 button:hover{
