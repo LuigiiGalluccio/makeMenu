@@ -11,7 +11,7 @@ router.get('/:orderId([0-9a-fA-F]{24})', async function (req, res, next) {
 
 router.get('/:orderId([0-9a-fA-F]{24})/qrcode', async function (req, res, next) {
     var id = req.params.orderId;
-    var qrcode = await qr.toDataURL(id,{width: 512});
+    var qrcode = await qr.toDataURL('http://localhost:3000/host/' + id + '/qrcode',{width: 512});
     res.render('qrcode',{qrcode});
 });
 
