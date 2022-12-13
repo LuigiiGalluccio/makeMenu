@@ -18,8 +18,6 @@ router.get('/', async function(req, res, next) {
         res.redirect('/login?failed=false');
 });
 
-
-
 /* GET Logout. */
 router.get('/logout', function(req, res, next) {
     req.logout(function(err) {
