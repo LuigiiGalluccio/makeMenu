@@ -10,15 +10,23 @@
     <script>
         function loadMenuHost(){
             let elemento = document.getElementById("frameContainer");
-            elemento.style.width = "210mm";
-            elemento.style.height = "297mm";
+            elemento.style.width = "100%";
+            elemento.style.height = "100%";
             elemento.style.margin = "auto";
             elemento.style.resize = "none";
             elemento.style.overflow = "auto";
-            elemento.style.float = "left";
+
+            let td = document.querySelectorAll("td");
+            let h1 = document.querySelectorAll("h1");
+
+            td.forEach(element =>{
+                element.setAttribute("contenteditable","false");
+            })
+            h1.forEach(element =>{
+                element.setAttribute("contenteditable","false");
+            })
         }
     </script>
-
 </head>
 <body onload="loadMenuHost()">
     <%- menu.menu_saved %>

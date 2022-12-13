@@ -23,34 +23,24 @@
             container.style.height = "80em";
         }
 
-        /** Function to catch empty Brand Name */
-        function brandNameManager(element){
-            if(element.innerHTML.length === 0)
-                element.innerHTML = "BRAND NAME"
-        }
-
         /** Add Section Function */
         function addSection(){
             let frameContainer = document.getElementById('frameContainer');
             let newElement = newSectionTitle();
             let newTable = newTableSection(newElement);
-
             //Add new element at main container
             frameContainer.appendChild(newElement);
             frameContainer.appendChild(newTable);
         }
-
         /** Function for apply attribute to element */
         function setElementProperties(element){
             element.setAttribute("contenteditable","true");
             element.style.cursor = "pointer";
-
             //If user type enter during the edit section, the header lost focus
             element.addEventListener("keypress",function (event){
                 if(event.key === "Enter")
                     this.blur();
             });
-
             //Clear textbox if content is default
             element.onfocus = function (){
                 if(this.innerHTML.includes("Empty Section") || this.innerHTML.includes("New"))
@@ -61,18 +51,15 @@
         function newSectionTitle(){
             let newElement = document.createElement("h1");
             setElementProperties(newElement);
-
             newElement.innerHTML = "New Section";
             newElement.style.color = document.getElementById("colorPickerSection").value;
             newElement.id = newElement.innerHTML;
-
             newElement.onblur = function (){
                 if(this.innerHTML === "")
                     this.innerHTML = "<p title='WARNING: Insert name of section!' style='display: inline; background-color: red'>Empty Section " + "&#128721" + "</p>";
                 this.setAttribute("id",newElement.innerHTML);
                 this.nextSibling.id = this.id + "T";
             };
-
             newElement.ondblclick = function (){
                 let tableOfSection = document.getElementById(this.id + "T");
                 addItemToTable(tableOfSection);
@@ -91,31 +78,25 @@
             let newTitle = document.createElement("td");
             let newDescription = document.createElement("td");
             let newPrice = document.createElement("td");
-
             //New title properties
             setElementProperties(newTitle);
             newTitle.setAttribute("class","itemTitle");
             newTitle.style.color = document.getElementById("colorPickerTitleItem").value;
             newTitle.innerHTML = "New Title";
-
             //New Description properties
             setElementProperties(newDescription);
             newDescription.setAttribute("class","itemDescription");
             newDescription.innerHTML = "New Description";
-
             //new Price properties
             setElementProperties(newPrice);
             newPrice.setAttribute("class","itemPrice");
             newPrice.innerHTML = "New Price";
-
             newDescription.style.color = newPrice.style.color = document.getElementById("colorPickerItem").value;
-
             //double click to add td description to table
             newRow.ondblclick = function (){
                 newDescription.style.color =
                     newRow.firstChild.after(newDescription);
             }
-
             //add item to table
             newRow.appendChild(newTitle);
             newRow.appendChild(newPrice);
@@ -170,6 +151,23 @@
             if(element.tagName === "H1")
                 element.nextElementSibling.remove();
             element.remove();
+        }
+
+        /** Reset all function */
+        function resetAll(){
+            let tab = document.querySelectorAll("table");
+            let h1 = document.querySelectorAll("h1");
+
+            h1.forEach(x =>{
+                if(x.id !== "titleMenu")
+                    x.remove();
+                else{
+                    x.style.color = "black";
+                    x.innerHTML = "BRAND NAME";
+                }
+            })
+            tab.forEach(x =>{ x.remove(); })
+            document.getElementById("frameContainer").style.backgroundColor = "white";
         }
 
         /** Show and Edit color picker for Color Text Section */
@@ -324,6 +322,7 @@
             <p class="title_1">Other Options</p>
             <button onclick="setLayoutA4()">Set Layout A4</button>
             <button onclick="setInitLayout()">Set Start Layout</button>
+            <button onclick="resetAll()">Clear menu</button>
         </div>
     </div>
 
@@ -333,7 +332,7 @@
         <%if(user.menu_saved!==null && user.menu_saved!==""){%>
         <%-user.menu_saved%>
         <%}else{%>
-            <div id="frameContainer"><h1 id="titleMenu">Brand Name</h1></div>
+            <div id="frameContainer"><h1 id="titleMenu" contenteditable="true">Brand Name</h1></div>
         <%}%>
     </div>
 </div>
