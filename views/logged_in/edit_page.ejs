@@ -281,7 +281,7 @@
                 if(xr.readyState == 4 && xr.status == 200) {
                     alert("Menu saved correctly!");
                     userID = xr.responseText;
-                    document.querySelector("#qrIP").setAttribute("value","http://192.168.1.41:3000/host/" + userID);
+                    document.querySelector("#qrIP").setAttribute("value","http:localhost:3000/host/" + userID);
                     document.getElementById("ipMSG").innerHTML = "Click on this black container to copy the link to the clipboard and close this message !"
                 }
             }
