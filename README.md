@@ -32,7 +32,7 @@ You can print one or more QRcodes for your activity.
 
 ## Give a feedback and help us improve our app!
 - luigi.galluccio001@studenti.uniparthenope.it
-- emilio-garzia001@studenti.uniparthenope.it
+- emilio.garzia001@studenti.uniparthenope.it
 - simone.dangelo001@studenti.uniparthenope.it
 
 
