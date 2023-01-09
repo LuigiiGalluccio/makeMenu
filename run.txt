@@ -1,1 +1,0 @@
-for running write: DEBUG=progetto:* npm start
